@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+        <title>Landing Page</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript">
+            window.onload = inicio;
+            var index = 0;
+
+            var listaimg = ["imagenes/aiete.jpg", "imagenes/laconcha.jpg", "imagenes/tolosa.jpg", "imagenes/irun.jpg","imagenes/montañas.jpg" ,"imagenes/fondo.jpg"];
+
+            function inicio(){
+                setInterval(cambiarfondo, 5000);
+            };
+
+            function cambiarfondo(){
+                document.getElementById('body').style.backgroundImage = "url("+listaimg[index]+")";
+                document.getElementById('body').style.backgroundRepeat = "no-repeat";
+                document.getElementById('body').style.backgroundAttachment = "fixed";
+                document.getElementById("body").style.backgroundSize = "100%";
+                
+                index++;
+                  
+               if(index == 6)
+                  index = 0;
+            }
+            function scroll(){    
+                var element = document.getElementById("elementoscroll");
+                element.scrollIntoView(); 
+            }
+        </script>
+        <style type="text/css">
+            body{
+                background-image: url(imagenes/fondo.jpg);
+                background-repeat: round;
+                background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body id="body">
+        <h1 class="text-center" style="font-size: 12em; -webkit-text-stroke: 1px lightgrey; color: white;"><strong>PicSite</strong></h1>
+        <section class="    row m-5">
+            <div class="col-sm-1 col-md-2 col-lg-3 col-xl-4"></div>
+            <div class="col-sm-10 col-md-8 col-lg-6 col-xl-4 card text-center">
+                <h1 >Iniciar Sesion</h1>
+                <form>
+                    <div class="row m-3">
+                        <p class="col-sm-4 col-md-4 col-lg-4 text-left">Usuario:</p>
+                        <input type="text" name="" class="col-sm-7 col-md-7 col-lg-7">
+                    </div>
+                    <div class="row m-3">
+                        <p class="col-sm-4 col-md-4 col-lg-4 text-left">Contraseña:</p>
+                        <input type="password" name="" class="col-sm-7 col-md-7">
+                    </div>
+                    <input type="submit" value="Entrar" name="">
+                </form>
+                <div class="row m-3">
+                        <p class="col-sm-5 col-md-5 col-lg-5 text-left"><a href="">Registrarse</a></p>
+                        <p class="col-sm-7 col-md-7 col-lg-7 text-right"><a href="">Acceder como Invitado</a></p>
+                </div>
+            </div>
+        </section>
+        <section class="row m-5">
+            <div class="col-sm-1 col-md-2 col-lg-3 col-xl-4">
+            </div>
+            <div class="col-sm-10 col-md-8 col-lg-6 col-xl-4 card text-left">
+                <h2 id="elementoscroll" onclick="scroll()" style="text-align: center;"><span><img src="imagenes/flecha.png" style="width: 25px;"></span>Bienvenido a PicSite!<span><img src="imagenes/flecha.png" style="width: 25px;"></span></h2>
+                <p>En PicSite podrás: </p>
+                <p>
+                - Encontrar lugares para fotografiar ya sean míticos o desconocidos</br>
+                - Añadir lugares para que la comunidad pueda disfrutar de ellos</br>
+                - Aportar a las publicaciones de lugares mediante comentarios</br>
+                - Explorar los perfiles del resto de usuarios para ver sus intereses</p>
+            </div>
+            <div class="col-4">
+            </div>
+        </section>
+</html>
