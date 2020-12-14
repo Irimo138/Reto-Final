@@ -78,19 +78,19 @@
                 <h1>Registro:</h1>
                 <form>
                     Nombre:<br>
-                    <input type="text" name="" placeholder="Ej.: Juan"><br>
-                    Apellido:<br>
-                        <input type="text" name="" placeholder="Ej.: Rodriguez"><br>
-                    Fecha Nacimiento:<br>
-                        <input type="date" name="" placeholder="Ej.: 22/10/2000"><br>
-                    Ciudad:<br>
-                        <input type="text" name="" placeholder="Ej.: Barcelona"><br>
-                    Correo electrónico:<br>
-                        <input type="text" name="" placeholder="@gmail.com, @hotmail.com , ..."><br>
-                    Contraseña:<br>
-                        <input type="password" name="" placeholder="Contraseña"><br>
-                    Repetir Contraseña:<br>
-                        <input type="password" name="" placeholder="Repetir contraseña"><br><br>
+                    <input type="text" name="" placeholder="Ej.: Juan">
+                        <br>Apellido:<br>
+                    <input type="text" name="" placeholder="Ej.: Rodriguez">
+                        <br>Fecha Nacimiento:<br>
+                    <input type="date" name="" placeholder="Ej.: 22/10/2000">
+                        <br>Ciudad:<br>
+                    <input type="text" name="" placeholder="Ej.: Barcelona">
+                        <br>Correo electrónico:<br>
+                    <input type="text" name="" placeholder="ejemplo@gmail.com">
+                        <br>Contraseña:<br>
+                    <input type="password" name="" placeholder="Contraseña">
+                        <br>Repetir Contraseña:<br>
+                    <input type="password" name="" placeholder="Repetir contraseña"><br><br>
                     <input type="submit" value="Registrarse" name="">
                 </form>
             </section>
