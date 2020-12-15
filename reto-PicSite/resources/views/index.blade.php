@@ -40,7 +40,7 @@
     <aside id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn d-block d-sm-block d-md-none" onclick="closeNav()">&times;</a>
         <section class="row m-1">
-            <img id="logo" class="mx-auto p-1" src="imagenes/logo1.png">
+            <img id="logo" class="mx-auto p-1" src="../resources/images/logo1.png">
             <h1 class="imagotipo mx-auto p-1">PicSite</h1>
             <hr class="mx-auto linea" ></li>
             <h3 class="imagotipo mx-auto">Un sitio de interés</h3>
