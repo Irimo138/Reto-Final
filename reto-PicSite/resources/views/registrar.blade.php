@@ -7,7 +7,7 @@
 
         <!--Linkear los estilos de la página-->
         <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../resources/css/estilos.css">
+        <link rel="stylesheet" href="../resources/css/estiloRegistro.css">
 
         <!--Linkear los scipts de bootstrap-->
         <script src="../resources/js/jquery-3.4.1.min.js"></script>

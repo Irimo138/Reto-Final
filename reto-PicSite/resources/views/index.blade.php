@@ -7,7 +7,7 @@
 
     <!--Linkear los estilos de la página-->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../resources/css/estilos2.css">
+    <link rel="stylesheet" href="../resources/css/estiloIndex.css">
 
     <!--Linkear los scipts de bootstrap-->
     <script src="../resources/js/jquery-3.4.1.min.js"></script>
