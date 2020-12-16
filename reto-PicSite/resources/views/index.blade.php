@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PicSite</title>
 
-    <!--Linkear los estilos de la página-->
-    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../resources/css/estiloIndex.css">
-
-    <!--Linkear los scipts de bootstrap-->
-    <script src="../resources/js/jquery-3.4.1.min.js"></script>
-    <script src="../resources/js/popper.min.js"></script>
-    <script src="../resources/js/bootstrap.min.js"></script>
-    <script src="../resources/js/bootstrap.bundle.min.js"></script>
+        <!--Linkear los estilos de la página-->
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/estilosIndex.css">
+        
+        <!--Linkear los scipts de bootstrap-->
+        <script src="{{mix('js/app.js')}}"></script>
+        <script src="../resources/js/jquery-3.4.1.min.js"></script>
+        <script src="../resources/js/popper.min.js"></script>
+        <script src="../resources/js/bootstrap.min.js"></script>
+        <script src="../resources/js/bootstrap.bundle.min.js"></script>
     
     <script>
         window.onload = openMidNav;
@@ -40,7 +41,7 @@
     <aside id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn d-block d-sm-block d-md-none" onclick="closeNav()">&times;</a>
         <section class="row m-1">
-            <img id="logo" class="mx-auto p-1" src="../resources/images/logo1.png">
+            <img id="logo" class="mx-auto p-1" src="images/logo1.png">
             <h1 class="imagotipo mx-auto p-1">PicSite</h1>
             <hr class="mx-auto linea" ></li>
             <h3 class="imagotipo mx-auto">Un sitio de interés</h3>
@@ -50,10 +51,17 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <b>Cambiar idioma</b>
             </a>
-            <div class="idiomaColor dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#"><img class="idiomas" src="../resources/images/banderaEsukadi.png">Esukera</a>
-                <div class="idiomaColor dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><img class="idiomas" src="../resources/images/banderaIngles.png">English</a>
+            <ul>
+                <li><a href="{{ url('locale/en','en') }}">EN</a></li>
+                <li><a href="{{ url('locale/es','es') }}">ES</a></li>
+                <li><a href="{{ url('locale/eus','eus') }}">EUS</a></li>
+            </ul>
+            {{trans('messages.prueba')}}
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#"><img class="idiomas" src="images/banderaEsukadi.png">Euskera</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><img class="idiomas" src="images/banderaIngles.png">English</a>
             </div>
             <h5>¿En que consiste PicSite?</h5>
             <div class="d-none d-sm-none d-md-block">
@@ -71,7 +79,7 @@
     </aside>
     <main id="page-content-wrapper">
         <article class="d-block d-sm-block d-md-none row m-1 container-fluid">
-            <img id="logo" class="mx-auto p-1" src="../resources/images/logo1.png">
+            <img id="logo" class="mx-auto p-1" src="images/logo1.png">
             <h1 class="imagotipo mx-auto p-1">PicSite</h1>
             <hr class="mx-auto linea" ></li>
             <h3 class="imagotipo mx-auto">Un sitio de interés</h3>
@@ -89,25 +97,27 @@
                         </ol>
                         <!-- Aquí se especifican las imagenes que apareceran y son de tipo carrusel. Además, ponemos el texto-->
                         <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="../resources/images/carreteran.jpg" class="d-block mx-auto imagenesCarrusel">
-                            <div class="contenido2 carousel-caption d-none d-md-block">
-                                <h2 class="colorTitulo">No compartas tu contraseña personal.</h2>
-                                <p>Consejo del día.</p>
+                            <div class="carousel-item active">
+                                <img src="images/carreteran.jpg" class="d-block mx-auto imagenesCarrusel">
+                                <div class="contenido2 carousel-caption d-none d-md-block">
+                                    <h2 class="colorTitulo">No compartas tu contraseña personal.</h2>
+                                    <p>Consejo del día.</p>
+                                </div>
                             </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src="../resources/images/microfono.jpg" class="d-block mx-auto imagenesCarrusel">
-                            <div class=" contenido2 carousel-caption d-none d-md-block">
-                              <h2 class="colorTitulo">Cuida el contenido que subes.</h2>
-                              <p>Compartamos un sitio con seguridad y el fin de disfrutarlo.</p>                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src="../resources/images/tren.jpg" class="d-block mx-auto imagenesCarrusel">
-                            <div class="contenido2 carousel-caption d-none d-md-block ">
-                              <h2 class="colorTitulo">¿Buscando un spot para fotografiar?</h2>
-                              <p>Disfruta de cada lugar que visites y no olvides cuidarlo.</p>                            </div>
-                          </div>
+                            <div class="carousel-item">
+                                <img src="images/microfono.jpg" class="d-block mx-auto imagenesCarrusel">
+                                <div class=" contenido2 carousel-caption d-none d-md-block">
+                                    <h2 class="colorTitulo">Cuida el contenido que subes.</h2>
+                                    <p>Compartamos un sitio con seguridad y el fin de disfrutarlo.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/tren.jpg" class="d-block mx-auto imagenesCarrusel">
+                                <div class="contenido2 carousel-caption d-none d-md-block ">
+                                    <h2 class="colorTitulo">¿Buscando un spot para fotografiar?</h2>
+                                    <p>Disfruta de cada lugar que visites y no olvides cuidarlo.</p>
+                                </div>
+                            </div>
                         </div>
                         <!-- Aquí se indican los botones para pasar de una imagen a otra, exactamente la anterior y la siguiente-->
                         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -118,29 +128,65 @@
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="sr-only">Next</span>
                         </a>
-                      </div>
+                    </div>
                 </section>
                 <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="../resources/images/ola.jpg">
+                    <img class="imagenSelec" src="images/ola.jpg">
                     <div class="contenido">
-                        <a class= "redirigir" href="#"><h2 class="colorTitulo">Iniciar Sesión</h2></a>
+                        <a class= "redirigir" href="#"><h2>Iniciar Sesión</h2></a>
                     </div>
                 </section>
                 <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center ">
-                    <img class="imagenSelec" src="../resources/images/pared.jpg">
+                    <img class="imagenSelec" src="images/pared.jpg">
                     <div class="contenido">
-                        <a class= "redirigir" href="#"><h2 class="colorTitulo">Entrar como invitado</h2></a>
+                        <a class= "redirigir" href="#"><h2>Entrar como invitado</h2></a>
                     </div>
                 </section>
                 <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center ">
-                    <img class="imagenSelec" src="../resources/images/carretera.jpg">
+                    <img class="imagenSelec" src="images/carretera.jpg">
                     <div class="contenido">
-                        <a class= "redirigir" href="#"><h2 class="colorTitulo">Registrarse</h2></a>
+                        <a class= "redirigir"  data-toggle="modal" data-target="#exampleModalLong"><h2>Registrarse</h2></a>
                     </div>
                 </section>
             </div>
         </article>
     </main>
     </section>
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Registro:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body align-items-center justify-content-center">
+        <form>
+            Nombre:<br>
+            <input type="text" class="form-control" name="" placeholder="Ej.: Juan">
+                <br>Apellido:<br>
+            <input type="text" class="form-control" name="" placeholder="Ej.: Rodriguez">
+                <br>Fecha Nacimiento:<br>
+            <input type="date" class="form-control" name="" placeholder="Ej.: 22/10/2000">
+                <br>Ciudad:<br>
+            <input type="text" class="form-control" name="" placeholder="Ej.: Barcelona">
+                <br>Correo electrónico:<br>
+            <input type="text" class="form-control" name="" placeholder="ejemplo@gmail.com">
+                <br>Nombre de Usuario:<br>
+            <input type="text" class="form-control" name="" placeholder="Juan_Rodri96">
+                <br>Contraseña:<br>
+            <input type="password" class="form-control" name="" placeholder="Contraseña">
+                <br>Repetir Contraseña:<br>
+            <input type="password" class="form-control" name="" placeholder="Repetir contraseña">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

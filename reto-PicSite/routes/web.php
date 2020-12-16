@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[UsuariosController::class, 'index']);
-Route::get('/registrarse',[UsuariosController::class, 'registrar']);
+Route::get('/registrarse',[UsuariosController::class, 'registrar'])->name("registrar");
