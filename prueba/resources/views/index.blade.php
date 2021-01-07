@@ -145,7 +145,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Registro:</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{ trans('messages.tituloregistro') }}:</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -158,47 +158,47 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                 
-                            <!-- Name -->
+                            <!-- Nombre -->
                             <div class="mt-4">
                                 {{ trans('messages.nombre') }}
-                                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                                <x-input id="name" placeholder="{{ trans('messages.placenombre') }}" class="block mt-1 w-full form-control" type="text" name="name" :value="old('name')" required autofocus />
                             </div>
                 
                             <!-- Apellido -->
                             <div class="mt-4">
                                 {{ trans('messages.apellido') }}
-                                <x-input id="apellido" class="block mt-1 w-full" type="text" name="apellido" :value="old('apellido')" required />
-                            </div>
-
-                            <!-- nickname -->
-                            <div class="mt-4">
-                                <x-label for="nickname" :value="__('Nickname')" />
-                                <x-input id="nickname" class="block mt-1 w-full" type="text" name="nickname" :value="old('nickname')" required />
-                            </div>
-
-                            <!-- city -->
-                            <div class="mt-4">
-                                {{ trans('messages.ciudad') }}
-                                <x-input id="city" class="block mt-1 w-full" type="text" name="city" :value="old('city')" required />
+                                <x-input id="apellido" placeholder="{{ trans('messages.placeapellido') }}" class="block mt-1 w-full form-control" type="text" name="apellido" :value="old('apellido')" required />
                             </div>
 
                             <!-- fecha -->
                             <div class="mt-4">
                                 {{ trans('messages.fecha') }}
-                                <x-input id="fecha" class="block mt-1 w-full" type="date" name="fecha" :value="old('fecha')" required />
+                                <x-input id="fecha" class="block mt-1 w-full form-control" type="date" name="fecha" :value="old('fecha')" required />
+                            </div>
+
+                            <!-- Ciudad -->
+                            <div class="mt-4">
+                                {{ trans('messages.ciudad') }}
+                                <x-input id="city" placeholder="{{ trans('messages.placeciudad') }}" class="block mt-1 w-full form-control" type="text" name="city" :value="old('city')" required />
                             </div>
 
                             <!-- Email Address -->
                             <div class="mt-4">
                                 <x-label for="email" :value="__('Email')" />
                 
-                                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                                <x-input id="email" placeholder="{{ trans('messages.placegmail') }}" class="block mt-1 w-full form-control" type="email" name="email" :value="old('email')" required />
                             </div>
-                
+
+                            <!-- Nickname -->
+                            <div class="mt-4">
+                                <x-label for="nickname" :value="__('Nickname')" />
+                                <x-input id="nickname" placeholder="{{ trans('messages.placenick') }}" class="block mt-1 w-full form-control" type="text" name="nickname" :value="old('nickname')" required />
+                            </div>
+
                             <!-- Password -->
                             <div class="mt-4">
                                 {{ trans('messages.contrasena') }}
-                                <x-input id="password" class="block mt-1 w-full"
+                                <x-input id="password" placeholder="{{ trans('messages.placecontra') }}" class="block mt-1 w-full form-control"
                                                 type="password"
                                                 name="password"
                                                 required autocomplete="new-password" />
@@ -207,18 +207,18 @@
                             <!-- Confirm Password -->
                             <div class="mt-4">
                                 {{ trans('messages.contrasena2') }}
-                                <x-input id="password_confirmation" class="block mt-1 w-full"
+                                <x-input id="password_confirmation" placeholder="{{ trans('messages.placerepcontra') }}" class="block mt-1 w-full form-control"
                                                 type="password"
                                                 name="password_confirmation" required />
                             </div>
                 
                             <div class="flex items-center justify-end mt-4">
-                                <a class="underline text-sm " data-toggle="modal" data-target="#modalRegistro" href="#">
+                                <a class="underline text-sm" data-toggle="modal" data-target="#modalRegistro" href="#">
                                     {{ __('Already registered?') }}
                                 </a>
                 
-                                <x-button class="botonf ml-4">
-                                    {{ trans('messages.regist') }}
+                                <x-button class="btn ml-4 btn-primary">
+                                    {{ trans('messages.botonregistro') }}
                                 </x-button>
                             </div>
                         </form>
@@ -249,14 +249,14 @@
                         <div>
                             <x-label for="email" :value="__('Email')" />
 
-                            <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                            <x-input id="email" class="block mt-1 w-full form-control" placeholder="{{ trans('messages.placegmail')}}" type="email" name="email" :value="old('email')" required autofocus />
                         </div>
 
                         <!-- Password -->
                         <div class="mt-4">
                             <x-label for="password" :value="__('Password')" />
 
-                            <x-input id="password" class="block mt-1 w-full"
+                            <x-input id="password" placeholder="{{trans('messages.placecontra')}}" class="block mt-1 w-full form-control"
                                             type="password"
                                             name="password"
                                             required autocomplete="current-password" />
@@ -266,18 +266,18 @@
                         <div class="block mt-4">
                             <label for="remember_me" class="inline-flex items-center">
                                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                <span class="ml-2 text-sm text-gray-600">{{ trans('messages.remember') }}</span>
                             </label>
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
                             @if (Route::has('password.request'))
                                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                                    {{ __('Forgot your password?') }}
+                                    {{ trans('messages.contraolvidada') }}
                                 </a>
                             @endif
 
-                            <x-button class="botonf ml-3">
+                            <x-button class="btn btn-primary ml-3">
                                 {{ trans('messages.inicios') }}
                             </x-button>
                         </div>
