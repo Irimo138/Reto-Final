@@ -40,7 +40,8 @@ class RegisteredUserController extends Controller
             'fecha' =>'required|date',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
-        ]);
+            'rol'=>'Usuario',
+            ]);
 
         Auth::login($user = User::create([
             'name' => $request->name,
@@ -50,6 +51,7 @@ class RegisteredUserController extends Controller
             'fecha' => $request->fecha,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'rol' => "Usuario"
         ]));
 
         event(new Registered($user));
