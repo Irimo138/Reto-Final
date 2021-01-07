@@ -31,6 +31,12 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/admin', function () {
+    return view('admin');
+});
+Route::get('/spots', function () {
+    return view('spots');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
