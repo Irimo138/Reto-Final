@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,5 +34,16 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+/*
+Route::get('/prueba', function () {
+    return view('admin');
+})->middleware(['rolMiddleware'])->name('handle');
+*/
+
+Route::get('/prueba', function(){
+    if(Auth::user()->rol == 'Administrador'){return Redirect::to('admin');}
+    else{return Redirect::to('spots');}
+});
 
 require __DIR__.'/auth.php';
