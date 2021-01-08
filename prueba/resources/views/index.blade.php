@@ -25,12 +25,11 @@
                     closeNav;
                 }
             }
-
             function openNav() {
                 document.getElementById("mySidenav").style.width = "100%";
+                document.getElementById("mySidenav").style.display = "block";
                 document.getElementById("page-content-wrapper").style.marginLeft = "25%";
             }
-        
             function closeNav() {
                 document.getElementById("mySidenav").style.width = "0";
                 document.getElementById("page-content-wrapper").style.marginLeft= "0";
@@ -39,7 +38,7 @@
     </head>
     <body id="wrapper">
         <aside id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn d-block d-sm-block d-md-none" onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" class="closebtn d-block d-sm-none d-md-none" onclick="closeNav()">&times;</a>
             <section class="row m-1">
                 <img id="logo" class="mx-auto p-1 mt-4" src="images/logo1.png">
                 <h1 class="imagotipo mx-auto p-1">PicSite</h1>
@@ -211,12 +210,10 @@
                                                 type="password"
                                                 name="password_confirmation" required />
                             </div>
-                
                             <div class="flex items-center justify-end mt-4">
-                                <a class="underline text-sm" data-toggle="modal" data-target="#modalRegistro" href="#">
+                                <a class="underline text-sm" data-toggle="modal" data-target="#modalRegistro"  href="#">
                                     {{ __('Already registered?') }}
                                 </a>
-                
                                 <x-button class="btn ml-4 btn-primary">
                                     {{ trans('messages.botonregistro') }}
                                 </x-button>
@@ -230,7 +227,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Iniciar Sesión:</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{trans('messages.iniciarheader')}}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -247,14 +244,14 @@
 
                         <!-- Email Address -->
                         <div>
-                            <x-label for="email" :value="__('Email')" />
+                            <x-label for="email" value="email" />
 
                             <x-input id="email" class="block mt-1 w-full form-control" placeholder="{{ trans('messages.placegmail')}}" type="email" name="email" :value="old('email')" required autofocus />
                         </div>
 
                         <!-- Password -->
                         <div class="mt-4">
-                            <x-label for="password" :value="__('Password')" />
+                            <x-label for="password" value="{{trans('messages.iniciarcontra')}}" />
 
                             <x-input id="password" placeholder="{{trans('messages.placecontra')}}" class="block mt-1 w-full form-control"
                                             type="password"

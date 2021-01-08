@@ -38,4 +38,6 @@ return[
     'remember' => 'Saioa ez ahaztu',
     'botonregistro' => 'Erregistratu',
     'contraolvidada' => 'Pasahitza berreskuratu',
+    'iniciarheader' => 'Saioa Hasi',
+    'iniciarcontra' => 'Pasahitza',
 ];

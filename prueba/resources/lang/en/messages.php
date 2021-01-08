@@ -39,4 +39,7 @@ return [
     'remember' => 'Remember me',
     'botonregistro' => 'Register',
     'contraolvidada' => 'Forgot Your PassWord?',
+    'iniciarheader' => 'Login',
+    'iniciarcontra' => 'Password',
+
 ];

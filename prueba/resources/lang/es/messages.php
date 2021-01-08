@@ -39,4 +39,6 @@ return [
     'remember' => 'Recordar credenciales',
     'botonregistro' => 'Registrarse',
     'contraolvidada' => 'Recuperar contraseña',
+    'iniciarheader' => 'Iniciar Sesión',
+    'iniciarcontra' => 'Contraseña',
 ];

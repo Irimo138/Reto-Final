@@ -10,14 +10,14 @@
 }
 .sidenav {
     height: 100%;
-    width: 0; /* se cambiará con JavaScript */
+    width: 25%; /* se cambiará con JavaScript */
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #c09f80;
     overflow-x: hidden; 
-    transition: 0.5s; 
+    transition: 0.5s;
 }
 .sidenav .closebtn {
     text-decoration: none;
@@ -27,9 +27,6 @@
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-}
-.sidenav .closebtn:hover{
-    font-size: x-large;
 }
 .imagotipo{
     text-align: center;
@@ -147,6 +144,10 @@ main{
 
 /* Tablets*/
 @media only screen and (min-width: 576px) and (max-width: 767px){
+    .sidenav{
+        display: block;
+        width: 25%;
+    }
     #wrapper {
         padding-left: 25%;
         color: #76323f;
@@ -155,11 +156,16 @@ main{
 
 /* Teléfonos */
 @media only screen and (max-width: 575px){
-    body{
+    body{   
         background-color: #d7cec7;
     }
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        display: none;
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
     #cabeza{
         color:#76323f;
     }
