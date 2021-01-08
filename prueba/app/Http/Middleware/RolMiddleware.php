@@ -20,6 +20,9 @@ class RolMiddleware
             return redirect('/admin');
             // return $next($request);
         }
+        else if(auth()->check() && (auth()->user()->rol == 'UsuarioPic')){
+            return redirect('/PicUser');
+        }
         else{
             return redirect('/spots');
         }

@@ -31,10 +31,10 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/admin', function () {
+Route::get('buscar/admin', function () {
     return view('admin');
 });
-Route::get('/spots', function () {
+Route::get('buscar/spots', function () {
     return view('spots');
 });
 Route::get('/dashboard', function () {
@@ -48,8 +48,8 @@ Route::get('/prueba', function () {
 */
 
 Route::get('/prueba', function(){
-    if(Auth::user()->rol == 'Administrador'){return Redirect::to('admin');}
-    else{return Redirect::to('spots');}
+    if(Auth::user()->rol == 'Administrador'){return Redirect::to('buscar/admin');}
+    else{return Redirect::to('buscar/spots');}
 });
 
 require __DIR__.'/auth.php';

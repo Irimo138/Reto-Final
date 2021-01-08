@@ -237,51 +237,51 @@
                     </div>
                     <!--INICIAR SESION-->
                     <div class="modal-body align-items-center justify-content-center">
-                    <!-- Session Status -->
-                    <x-auth-session-status class="mb-4" :status="session('status')" />
-                    <!-- Validation Errors -->
-                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                        <!-- Session Status -->
+                        <x-auth-session-status class="mb-4" :status="session('status')" />
+                        <!-- Validation Errors -->
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
 
-                        <!-- Email Address -->
-                        <div>
-                            <x-label for="email" :value="__('Email')" />
+                            <!-- Email Address -->
+                            <div>
+                                <x-label for="email" :value="__('Email')" />
 
-                            <x-input id="email" class="block mt-1 w-full form-control" placeholder="{{ trans('messages.placegmail')}}" type="email" name="email" :value="old('email')" required autofocus />
-                        </div>
+                                <x-input id="email" class="block mt-1 w-full form-control" placeholder="{{ trans('messages.placegmail')}}" type="email" name="email" :value="old('email')" required autofocus />
+                            </div>
 
-                        <!-- Password -->
-                        <div class="mt-4">
-                            <x-label for="password" :value="__('Password')" />
+                            <!-- Password -->
+                            <div class="mt-4">
+                                <x-label for="password" :value="__('Password')" />
 
-                            <x-input id="password" placeholder="{{trans('messages.placecontra')}}" class="block mt-1 w-full form-control"
-                                            type="password"
-                                            name="password"
-                                            required autocomplete="current-password" />
-                        </div>
+                                <x-input id="password" placeholder="{{trans('messages.placecontra')}}" class="block mt-1 w-full form-control"
+                                                type="password"
+                                                name="password"
+                                                required autocomplete="current-password" />
+                            </div>
 
-                        <!-- Remember Me -->
-                        <div class="block mt-4">
-                            <label for="remember_me" class="inline-flex items-center">
-                                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                                <span class="ml-2 text-sm text-gray-600">{{ trans('messages.remember') }}</span>
-                            </label>
-                        </div>
+                            <!-- Remember Me -->
+                            <div class="block mt-4">
+                                <label for="remember_me" class="inline-flex items-center">
+                                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                                    <span class="ml-2 text-sm text-gray-600">{{ trans('messages.remember') }}</span>
+                                </label>
+                            </div>
 
-                        <div class="flex items-center justify-end mt-4">
-                            @if (Route::has('password.request'))
-                                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                                    {{ trans('messages.contraolvidada') }}
-                                </a>
-                            @endif
+                            <div class="flex items-center justify-end mt-4">
+                                @if (Route::has('password.request'))
+                                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                                        {{ trans('messages.contraolvidada') }}
+                                    </a>
+                                @endif
 
-                            <x-button class="btn btn-primary ml-3">
-                                {{ trans('messages.inicios') }}
-                            </x-button>
-                        </div>
-                    </form>
+                                <x-button class="btn btn-primary ml-3">
+                                    {{ trans('messages.botonregistro') }}
+                                </x-button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
