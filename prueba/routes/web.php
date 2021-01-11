@@ -28,7 +28,7 @@ Route::group(['middleware' => ['web']], function () {
     ]);
 });
 Route::get('/', function () {
-    return view('index');
+    return view('form');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
