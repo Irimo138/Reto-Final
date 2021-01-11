@@ -12,6 +12,6 @@ class Spot extends Model
         'Descripción',
         'Latitud',
         'Longitud',
-        'Nickname',
+        
     ];
 }

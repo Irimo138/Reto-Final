@@ -43,10 +43,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/spot',[SpotController::class, 'index']);
-//Route::get('/spot', "App\Http\Controllers\spotController@show");
-//Route::post('/spot/crearspot', [spotController::class, 'show'])->name("mostrar");
-Route::post('/spot/crearspot', [SpotController::class, 'store'])->name("crear");
+Route::get('/spot', "App\Http\Controllers\SpotsController@index");
+Route::get('/spot', "App\Http\Controllers\SpotsController@show");
+Route::get('/spot', "App\Http\Controllers\SpotsController@store")->name('create');
 
 Route::get('/prueba', function(){
     if(Auth::user()->rol == 'Administrador'){return Redirect::to('buscar/admin');}

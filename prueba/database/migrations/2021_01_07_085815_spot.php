@@ -14,7 +14,7 @@ class Spot extends Migration
     public function up()
     {
         Schema::create('spots', function (Blueprint $table) {
-            $table->id('id_spot')->uniqid();
+            $table->id('id_spot')->autoIncrement();
             //$table->file('Imagen');
             $table->string('titulo');
             $table->string('descripción');
