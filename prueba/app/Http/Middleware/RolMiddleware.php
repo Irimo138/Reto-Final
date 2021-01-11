@@ -16,7 +16,16 @@ class RolMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        return redirect('/');
-        //return $next($request);
+        if (auth()->check() && (auth()->user()->rol == 'Administrador')){
+            return redirect('/admin');
+            // return $next($request);
+        }
+        else if(auth()->check() && (auth()->user()->rol == 'UsuarioPic')){
+            //return redirect('/PicUser');
+            return $next($request);
+        }
+        else{
+            return redirect('/spots');
+        }
     }
 }
