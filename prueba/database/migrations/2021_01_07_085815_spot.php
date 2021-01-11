@@ -16,11 +16,12 @@ class Spot extends Migration
         Schema::create('spots', function (Blueprint $table) {
             $table->id('id_spot')->uniqid();
             //$table->file('Imagen');
-            $table->string('Titulo');
-            $table->string('Descripción');
-            $table->string('Latitud');
-            $table->string('Longitud');
-            $table->string('Nickname')->references('nickname')->on('users');
+            $table->string('titulo');
+            $table->string('descripción');
+            $table->string('latitud');
+            $table->string('longitud');
+            //$table->string('Nickname')->references('nickname')->on('users');
+            //$table->id('id_etiquetas')->references('id_etiquetas')->on('etiquetas');
             $table->rememberToken();
             $table->timestamps();
         });

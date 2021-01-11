@@ -13,7 +13,7 @@ class spotController extends Controller
      */
     public function index()
     {
-        //
+        return view("spots");
     }
 
     /**
@@ -21,9 +21,16 @@ class spotController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $spots = new App\Models\Spot();
+        $spots->Titulo = $request->Titulo;
+        $spots->Descripcion = $request->Descripcion;
+        $spots->Latitud = $request->Latitud;
+        $spots->Longitud = $request->Longitud;
+        //$spots->Nickname = $request->Nickname;
+        $spots->save();
+        return redirect("/");
     }
 
     /**
@@ -44,12 +51,12 @@ class spotController extends Controller
             ]);
 
             Auth::login($user = Spots::create([
-            'Titulo'=>$request->Titulo,
-            'Descripción' => $request->Descripción,
-            'Latitud' => $request->Latitud,
-            'Longitud' => $request->Longitud,
-            'Nickname' => $request->Nickname,
-            ]));
+                'Titulo'=>$request->Titulo,
+                'Descripción' => $request->Descripción,
+                'Latitud' => $request->Latitud,
+                'Longitud' => $request->Longitud,
+                'Nickname' => $request->Nickname,
+                ]));
     }
 
     /**
@@ -60,7 +67,8 @@ class spotController extends Controller
      */
     public function show($id)
     {
-        //
+        $spots = App\Models\Spot::all();
+        return view("indexSpot", array('spots'=>$spots)); 
     }
 
     /**
@@ -94,6 +102,8 @@ class spotController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = App\Models\Spot::findOrFail($id);
+        $task->delete();
+        return redirect("/");
     }
 }

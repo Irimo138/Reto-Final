@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\spotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,9 @@ Route::group(['middleware' => ['web']], function () {
         'lang' => 'en|es|eus'
     ]);
 });
+
 Route::get('/', function () {
-    return view('form');
+    return view('index');
 });
 Route::get('buscar/admin', function () {
     return view('admin');
@@ -41,11 +43,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-/*
-Route::get('/prueba', function () {
-    return view('admin');
-})->middleware(['rolMiddleware'])->name('handle');
-*/
+Route::get('/spot',[SpotController::class, 'index']);
+//Route::get('/spot', "App\Http\Controllers\spotController@show");
+//Route::post('/spot/crearspot', [spotController::class, 'show'])->name("mostrar");
+Route::post('/spot/crearspot', [SpotController::class, 'store'])->name("crear");
 
 Route::get('/prueba', function(){
     if(Auth::user()->rol == 'Administrador'){return Redirect::to('buscar/admin');}
