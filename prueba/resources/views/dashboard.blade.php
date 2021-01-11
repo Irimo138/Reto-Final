@@ -4,7 +4,20 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
+    
+    @if (session('status'))
+        <p> {{ session('status') }}</p>
+        @can('Administrador')
+            <h1>administrador</h1>
+        @elsecan('Usuario')
+        <h1>usuario</h1>
+        @endcan
+    @endif
+    
+    <a class="underline text-sm " href="{{url ('/prueba')}}">
+        {{ __('navegar') }}
+    </a>
+    </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
