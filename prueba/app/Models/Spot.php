@@ -7,11 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Spot extends Model
 {
-    protected $fillable = [
-        'Titulo',
-        'Descripción',
-        'Latitud',
-        'Longitud',
-        
-    ];
+    protected $guarded = [];
 }

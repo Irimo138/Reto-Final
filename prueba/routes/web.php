@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\spotController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +43,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/spot', "App\Http\Controllers\SpotsController@index");
-Route::get('/spot', "App\Http\Controllers\SpotsController@show");
-Route::get('/spot', "App\Http\Controllers\SpotsController@store")->name('create');
+Route::get('/spot',[\App\Http\Controllers\SpotController::class, 'index']);
+Route::get('/spot', [\App\Http\Controllers\SpotController::class, 'show']);
+Route::post('/spot/creae', [\App\Http\Controllers\SpotController::class, 'store'])->name("nuevoSpot");
 
 Route::get('/prueba', function(){
     if(Auth::user()->rol == 'Administrador'){return Redirect::to('buscar/admin');}
