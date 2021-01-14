@@ -13,9 +13,14 @@ class Spot extends Migration
             $table->string("name");
             $table->string("url");
             $table->string("descripcion");
-            $table->string("latitud");
-            $table->string("longitud");
+            $table->double("latitud");
+            $table->double("longitud");
             $table->timestamps();
+
+            //Utilidades de la relacion con los spots
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('create_users_table')->onDelete('cascade');
+                //Sirve para elimanr los registros de los spots. No se eliminaran las imagenes.
         });
     }
 
