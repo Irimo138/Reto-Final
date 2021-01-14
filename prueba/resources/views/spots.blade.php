@@ -69,14 +69,27 @@
         <h3>Lista de los spots existentes</h3>
         <fieldset>
             <legend>Spots</legend>
-            <table>
-                @foreach($spots as $task)
-                <tr>
-                    <td>{{$task->titulo}}</td>
-                    <td>{{$task->descripcion}}</td>
-                </tr> 
-                @endforeach
-            </table>
+                <table>
+                    <tr>
+                        <td><b>ID</b></td>
+                        <td><b>Titulo</b></td>
+                        <td><b>Ruta</b></td>
+                        <td><b>Descripción</b></td>
+                        <td><b>Latitud</b></td>
+                        <td><b>Longitud</b></td>
+                    </tr> 
+                    @foreach($spots as $spots)
+                    <tr>
+                        <td>{{$spots->id_spot}}</td>
+                        <td>{{$spots->Titulo}}</td>
+                        <td>{{$spots->url}}</td>
+                        <td>{{$spots->Descripción}}</td>
+                        <td>{{$spots->Latitud}}</td>
+                        <td>{{$spots->Longitud}}</td>
+                        
+                    </tr> 
+                    @endforeach
+                </table>
         </fieldset>
         <script>
             var mymap = L.map('mapid').setView([51.505, -0.09], 13);
