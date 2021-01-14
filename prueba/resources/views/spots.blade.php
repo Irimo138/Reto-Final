@@ -13,7 +13,7 @@
         <h3>Crear nuevos spots</h3>
         <fieldset>
             <legend>Nuevo spot</legend>
-            <form method="POST" action="{{route("crear")}}">
+            <form method="POST" action="{{route("nuevoSpot")}}">
                 @csrf
                 <span>Titulo:</span>
                 <input name="Titulo" type="text"/>

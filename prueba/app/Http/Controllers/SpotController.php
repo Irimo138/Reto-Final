@@ -49,6 +49,6 @@ class SpotController extends Controller
     }
     public function show(){
         $spots = \App\Models\Spot::all();
-        return view("indexSpot", array('spots'=>$spots)); 
+        return view("spots", array('spots'=>$spots));
     }
 }
