@@ -15,30 +15,29 @@ class SpotController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'Titulo' => 'required|string|max:255',
+            
             'file' => 'required|image',
-            'Descripción' =>'required|string|max:255|unique:users',
-            'Latitud' =>'required|string|max:255',
-            'Longitud' =>'required|string|max:255',
-            ]);
-
-        $imagenes = $request->file('file')->store('public/imagenes');
-        $url = Storage::url($imagenes);
-
-
-        $spots = new \App\Models\Spot();
-        $spots->titulo = $request->titulo;
-        $spots->descripcion = $request->descripcion;
-        $spots->latitud = $request->latitud;
-        $spots->longitud = $request->longitud;
-
-        Spot::create([
-            'titulo' => $spots->titulo,
-            'url' => $url,
-            'descripcion' => $spots->descripcion,
-            'latitud' => $spots->latitud,
-            'longitud' => $spots->longitud,
+            
         ]);
+       $imagenes = $request->file('file')->store('public/imagenes');
+       $url = Storage::url($imagenes);
+
+       $spot = new Spot();
+       $spot->name = $request->name;
+       $spot->descripcion = $request->descripcion;
+       $spot->latitud = $request->latitud;
+       $spot->longitud = $request->longitud;
+
+       Spot::create([
+           'name' => $spot->name,
+           'url' => $url,
+           'descripcion' => $spot->descripcion,
+           'latitud' => $spot->latitud,
+           'longitud' => $spot->longitud,
+       ]);
+
+       //Al crear un nuevo spot te redirigirá a la página de explorador de spots
+       //return view('mostrarSpots');
     }
     public function delete($id){
         /*
