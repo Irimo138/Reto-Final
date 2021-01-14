@@ -8,7 +8,7 @@ class Spot extends Migration
 {
     public function up()
     {
-        Schema::create('spot', function (Blueprint $table) {
+        Schema::create('spots', function (Blueprint $table) {
             $table->id('id_spot')->autoIncrement();
             $table->string('url');
             $table->string('titulo');
@@ -22,6 +22,6 @@ class Spot extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('spot');
+        Schema::dropIfExists('spots');
     }
 }

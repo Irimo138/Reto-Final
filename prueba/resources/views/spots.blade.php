@@ -92,19 +92,18 @@
                         <td><b>Latitud</b></td>
                         <td><b>Longitud</b></td>
                     </tr> 
-                    @foreach($spot as $spot)
+                    @foreach($spots as $spots)
                     <tr>
-                        <td>{{$spot->id_spot}}</td>
-                        <td>{{$spot->titulo}}</td>
-                        <td>{{$spot->descripcion}}</td>
-                        <td>{{$spot->latitud}}</td>
-                        <td>{{$spot->longitud}}</td>
+                        <td>{{$spots->id_spot}}</td>
+                        <td>{{$spots->titulo}}</td>
+                        <td>{{$spots->descripcion}}</td>
+                        <td>{{$spots->latitud}}</td>
+                        <td>{{$spots->longitud}}</td>
                     </tr> 
                     @endforeach
                     </table>
                 </fieldset>
         </article>
-        
     </section>
     </body>
 </html>
