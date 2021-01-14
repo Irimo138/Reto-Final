@@ -6,34 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 class Spot extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('spots', function (Blueprint $table) {
-            $table->id('id_spot')->uniqid();
-            //$table->file('Imagen');
+        Schema::create('spot', function (Blueprint $table) {
+            $table->id('id_spot')->autoIncrement();
+            $table->string('url');
             $table->string('titulo');
             $table->string('descripción');
             $table->string('latitud');
             $table->string('longitud');
             //$table->string('Nickname')->references('nickname')->on('users');
             //$table->id('id_etiquetas')->references('id_etiquetas')->on('etiquetas');
-            $table->rememberToken();
-            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::dropIfExists('spots');
+        Schema::dropIfExists('spot');
     }
 }
