@@ -48,8 +48,12 @@ Route::get('/spot', [\App\Http\Controllers\SpotController::class, 'show']);
 Route::post('/spot/creae', [\App\Http\Controllers\SpotController::class, 'store'])->name("nuevoSpot");
 
 Route::get('/prueba', function(){
-    if(Auth::user()->rol == 'Administrador'){return Redirect::to('buscar/admin');}
-    else{return Redirect::to('buscar/spots');}
+    if(Auth::user()->rol == 'Administrador'){
+        return Redirect::to('buscar/admin');
+    }
+    else{
+        return Redirect::to('buscar/spots');
+    }
 });
 
 require __DIR__.'/auth.php';
