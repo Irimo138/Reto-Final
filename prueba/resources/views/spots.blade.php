@@ -18,6 +18,13 @@
                 <span>Titulo:</span>
                 <input name="Titulo" type="text"/>
                 <br>
+                <span>Selecciona una imagen del lugar</span>
+                <input type="file" name="file" id="" accept="image/*">
+                @error('file')
+                            <small class="text-danger">{{$message}}</small>
+                        @enderror
+                        <input id="crear" type="submit" value="Crear"/>º
+                <br>
                 <span>Descripcion:</span>
                 <input name="Titulo" type="text"/>
                 <br>

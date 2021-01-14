@@ -10,8 +10,8 @@ class Spot extends Migration
     {
         Schema::create('spots', function (Blueprint $table) {
             $table->id('id_spot')->autoIncrement();
-            $table->string('url');
             $table->string('titulo');
+            $table->string('url');
             $table->string('descripción');
             $table->string('latitud');
             $table->string('longitud');
