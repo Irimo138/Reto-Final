@@ -68,13 +68,25 @@
             </section>
         </aside>
         <main id="page-content-wrapper">
-            <article id="cabeza" class="d-block d-xs-block d-sm-none row m-1 container-fluid">
+            <section id="cabeza" class="d-block d-xs-block d-sm-none row m-1 container-fluid">
                 <img id="logo" class="mx-auto p-1" src="images/logo12.png">
                 <h1 class="imagotipo mx-auto p-1">PicSite</h1>
                 <hr class="mx-auto linea" ></li>
                 <h3 class="imagotipo mx-auto">{{ trans('messages.logo') }}</h3>
                 <span class="d-block d-sm-block d-md-none" id="boton" onclick="openNav()">&#9776;</span>
-            </article>
+            </section>
+            <section class="container">
+                <div class="row">
+                    @foreach($spots as $spot)
+                        <article class="seleccion caja col-12 col-md-3 p-0 m-0 text-center">
+                            <img class="imagenSelec" src="{{asset($spot->url)}}">
+                            <div class="contenido">
+                                <h2>{{($spot->name)}}</h2>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </section>
         </main>
     </body>
 </html>

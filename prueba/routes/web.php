@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 
 /*
@@ -34,9 +35,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/explorador', function () {
-    return view('exploradorSpots');
-});
+Route::get('/explorador', 'HomeController@index');
 
 // LAS SIGUIENTES RUTAS REQUIEREN DE AUTENTIFICACIÓN
 Auth::routes();
