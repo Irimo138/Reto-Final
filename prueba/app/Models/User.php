@@ -45,4 +45,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function spots(){
+
+        //Relacion de uno a muchos, entre un usuario y los spots
+        return $this->hasMany('App\Spot');
+    }
 }

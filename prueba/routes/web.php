@@ -33,19 +33,37 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/explorador', function () {
+    return view('exploradorSpots');
+});
+
+// LAS SIGUIENTES RUTAS REQUIEREN DE AUTENTIFICACIÓN
+Auth::routes();
+
+Route::group(['prefix'=>'usuario', 'middleware'=>'auth'], function(){
+    Route::get('/spot',[\App\Http\Controllers\SpotController::class, 'index']);
+    Route::get('/spot', [\App\Http\Controllers\SpotController::class, 'show']);
+    Route::post('/spot', [\App\Http\Controllers\SpotController::class, 'store'])->name("nuevoSpot");
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+
+
+
+require __DIR__.'/auth.php';
+
+/*
+RUTAS PARA ADMINISTRADOR O USUARIO
 Route::get('buscar/admin', function () {
     return view('admin');
 });
 Route::get('buscar/spots', function () {
     return view('spots');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-Route::get('/spot',[\App\Http\Controllers\SpotController::class, 'index']);
-Route::get('/spot', [\App\Http\Controllers\SpotController::class, 'show']);
-Route::post('/spot', [\App\Http\Controllers\SpotController::class, 'store'])->name("nuevoSpot");
 
 Route::get('/prueba', function(){
     if(Auth::user()->rol == 'Administrador'){
@@ -55,5 +73,4 @@ Route::get('/prueba', function(){
         return Redirect::to('buscar/spots');
     }
 });
-
-require __DIR__.'/auth.php';
+*/

@@ -34,6 +34,7 @@ class SpotController extends Controller
            'descripcion' => $spot->descripcion,
            'latitud' => $spot->latitud,
            'longitud' => $spot->longitud,
+           'user_id' => auth()->user()->id,
        ]);
 
        //Al crear un nuevo spot te redirigirá a la página de explorador de spots
