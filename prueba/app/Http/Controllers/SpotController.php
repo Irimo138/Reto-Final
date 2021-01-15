@@ -38,7 +38,7 @@ class SpotController extends Controller
        ]);
 
        //Al crear un nuevo spot te redirigirá a la página de explorador de spots
-       //return view('mostrarSpots');
+       return view('exploradorSpots');
     }
     public function delete($id){
         /*

@@ -41,7 +41,7 @@ Route::get('/explorador', function () {
 // LAS SIGUIENTES RUTAS REQUIEREN DE AUTENTIFICACIÓN
 Auth::routes();
 
-Route::group(['prefix'=>'usuario', 'middleware'=>'auth'], function(){
+Route::group([ 'middleware'=>'auth'], function(){
     Route::get('/spot',[\App\Http\Controllers\SpotController::class, 'index']);
     Route::get('/spot', [\App\Http\Controllers\SpotController::class, 'show']);
     Route::post('/spot', [\App\Http\Controllers\SpotController::class, 'store'])->name("nuevoSpot");
