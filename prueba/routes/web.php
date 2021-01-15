@@ -34,6 +34,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/explorador', function () {
+    return view('exploradorSpots');
+});
+
 // LAS SIGUIENTES RUTAS REQUIEREN DE AUTENTIFICACIÓN
 Auth::routes();
 
