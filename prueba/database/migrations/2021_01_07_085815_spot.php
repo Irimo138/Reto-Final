@@ -9,14 +9,13 @@ class Spot extends Migration
     public function up()
     {
         Schema::create('spots', function (Blueprint $table) {
-            $table->id('id_spot')->autoIncrement();
-            $table->string('url');
-            $table->string('titulo');
-            $table->string('descripción');
-            $table->string('latitud');
-            $table->string('longitud');
-            //$table->string('Nickname')->references('nickname')->on('users');
-            //$table->id('id_etiquetas')->references('id_etiquetas')->on('etiquetas');
+            $table->id();
+            $table->string("name");
+            $table->string("url");
+            $table->string("descripcion");
+            $table->string("latitud");
+            $table->string("longitud");
+            $table->timestamps();
         });
     }
 
