@@ -35,7 +35,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/explorador', 'HomeController@index');
+Route::get('/explorador', 'HomeController@index')->name('explorar');
 
 // LAS SIGUIENTES RUTAS REQUIEREN DE AUTENTIFICACIÓN
 Auth::routes();
