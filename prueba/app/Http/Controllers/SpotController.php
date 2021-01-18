@@ -8,9 +8,11 @@ use App\Models\Spot;
 
 class SpotController extends Controller
 {
+    
     public function index()
     {
-        return view('spots');
+        $spots = Spot::all();
+        return view('misSpots', compact('spots'));
     }
     public function store(Request $request){
 
@@ -22,30 +24,40 @@ class SpotController extends Controller
         $imagenes = $request->file('file')->store('public/imagenes');
        $url = Storage::url($imagenes);
 
-       $spot = new Spot();
-       $spot->name = $request->name;
-       $spot->descripcion = $request->descripcion;
-       $spot->latitud = $request->latitud;
-       $spot->longitud = $request->longitud;
+       $spots = new Spot();
+       $spots->name = $request->name;
+       $spots->descripcion = $request->descripcion;
+       $spots->latitud = $request->latitud;
+       $spots->longitud = $request->longitud;
 
        Spot::create([
-           'name' => $spot->name,
+           'name' => $spots->name,
            'url' => $url,
-           'descripcion' => $spot->descripcion,
-           'latitud' => $spot->latitud,
-           'longitud' => $spot->longitud,
+           'descripcion' => $spots->descripcion,
+           'latitud' => $spots->latitud,
+           'longitud' => $spots->longitud,
            'user_id' => auth()->user()->id,
        ]);
 
        //Al crear un nuevo spot te redirigirá a la página de explorador de spots
-       return view('exploradorSpots');
+       redirect('explorar');
     }
-    public function delete($id){
-        /*
+    public function destroy(Spot $spot){
+        
+        //Para borrar la imagen del servidor, no solo la url de nuestra base de datos, tenemos que cambiarle la url de donde se almacena por la siguiente.
+        $url = str_replace('storage','public',$spot->url);
+        Storage::delete($url);
+
+        $spot->delete();
+        return redirect()->route('mios')->with('eliminado','ok');
+        
+    }
+    public function edit($id){
+        
         $spots = App\Models\Spot::findOrFail($id);
         $spots->delete();
         return redirect("/spot");
-        */
+        
     }
     public function show(){
         $spots = \App\Models\Spot::all();

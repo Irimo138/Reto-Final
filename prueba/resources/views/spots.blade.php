@@ -93,6 +93,7 @@
                         <td><b>Descripcion</b></td>
                         <td><b>latitud</b></td>
                         <td><b>longitud</b></td>
+                        <td><b>usuario</b></td>
                     </tr> 
                     @foreach($spots as $spot)
                     <tr>
@@ -101,6 +102,7 @@
                         <td>{{$spot->descripcion}}</td>
                         <td>{{$spot->latitud}}</td>
                         <td>{{$spot->longitud}}</td>
+                        <td>{{$spot->user_id}}</td>
                     </tr> 
                     @endforeach
                     </table>

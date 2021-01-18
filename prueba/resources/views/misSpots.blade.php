@@ -12,6 +12,8 @@
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>    
+        <!--Script para introducir el pluggin de verificacion de eliminar-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script>
            window.onload = iniciar;
             let sizze = window.screen.width;
@@ -34,6 +36,7 @@
                 document.getElementById("mySidenav").style.width = "0";
                 document.getElementById("page-content-wrapper").style.marginLeft= "0";
             }
+
         </script>
     </head>
     <body id="wrapper">
@@ -78,13 +81,23 @@
             <section class="container">
                 <div class="row">
                     @foreach($spots as $spot)
-                    
-                        <article class="seleccion caja col-12 col-md-3 p-0 m-0 text-center">
-                            <img class="imagenSelec" src="{{asset($spot->url)}}">
-                            <div class="contenido">
-                                <h2>{{($spot->name)}}</h2>
+                        <div class="col-4">
+                            <div class="card">
+                                <img class="img-fluid" src="{{asset($spot->url)}}" alt="">
+                                <h2 class="card-title">{{($spot->name)}}</h2>
+                                <div class="card-footer"></div>
+                                    <a href="{{route('edit', $spot)}}" class="btn-tbn-primary">Editar</a>
+
+                                    <form action="{{route('destroy', $spot)}}" class="d-inline" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                    </form>
+                                </div>
+                            
                             </div>
-                        </article>
+                            
+                        </div>
                     @endforeach
                 </div>
             </section>
