@@ -118,23 +118,31 @@
                             </a>
                         </div>
                     </section>
+                    
                     <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center">
-                        <img class="imagenSelec" src="images/pared.jpg">
-                        <div class="contenido">
-                            <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h2>{{ trans('messages.inicios') }}</h2></a>
-                        </div>
+                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion">
+                            <img class="imagenSelec" src="images/pared.jpg">
+                            <div class="contenido">
+                                <h2>{{ trans('messages.inicios') }}</h2>
+                            </div>
+                        </a>
+                    </section>
+                    
+                    <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center ">
+                        <a class="redirigir" href={{route("explorador")}}" >
+                            <img class="imagenSelec" src="images/ola.jpg">
+                            <div class="contenido">
+                                <h2>{{ trans('messages.einvitado') }}</h2>
+                            </div>
+                            </a>
                     </section>
                     <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center ">
-                        <img class="imagenSelec" src="images/ola.jpg">
-                        <div class="contenido">
-                            <a class="redirigir" href={{route("explorar")}}" ><h2>{{ trans('messages.einvitado') }}</h2></a>
-                        </div>
-                    </section>
-                    <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center ">
-                        <img class="imagenSelec" src="images/carretera.jpg">
-                        <div class="contenido">
-                            <a class="redirigir"  data-toggle="modal" data-target="#modalRegistro"><h2>{{ trans('messages.regist') }}</h2></a>
-                        </div>
+                        <a class="redirigir"  data-toggle="modal" data-target="#modalRegistro">
+                            <img class="imagenSelec" src="images/carretera.jpg">
+                            <div class="contenido">
+                                <h2>{{ trans('messages.regist') }}</h2>
+                            </div>
+                        </a>
                     </section>
                 </div>
             </article>
