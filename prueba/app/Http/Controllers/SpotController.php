@@ -10,7 +10,6 @@ class SpotController extends Controller
 {
     public function index()
     {
-        $spots = Spot::where("user_id", auth()->user->id);
         return view('spots');
     }
     public function store(Request $request){

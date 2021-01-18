@@ -15,4 +15,13 @@ class HomeController extends Controller
         //utilizamos compact para que la vista pueda acceder a los registros
         return view('exploradorSpots', compact('spots'));
     }
+    public function myOwn(){
+        
+        //en la siguiente variable se almacenan todos los registros de spot del usuario
+        $spots = Spot::where("user_id", auth()->user->id);
+
+        //utilizamos compact para que la vista pueda acceder a los registros
+        return view('misSpots', compact('spots'));
+    }
+    
 }
