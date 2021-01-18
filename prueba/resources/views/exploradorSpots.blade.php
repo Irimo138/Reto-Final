@@ -46,16 +46,9 @@
                 <h3 class="imagotipo mx-auto">{{ trans('messages.logo') }}</h3>
             </section>
             <section class="contenidoAside">
-                <a><b>{{ trans('messages.idioma') }}</b></a>
-                <ul>
-                    <li><a href="{{ url('lang', ['en']) }}"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
-                    <li><a href="{{ url('lang', ['es']) }}"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
-                    <li><a href="{{ url('lang', ['eus']) }}"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
-                </ul>
                 <h5>{{trans('messages.ideat')}}</h5>
                 <div class="d-none d-sm-none d-md-block">
                     <p class="texto p-3 text-dark">{{trans('messages.parrafoi')}}</p>
-
                 </div>
                 <div class="d-block d-sm-block d-md-none">
                     <p class="texto p-3 text-dark">{{trans('messages.parrafoi2')}}</p>
@@ -65,6 +58,12 @@
                         <p class="texto p-3 text-dark">{{trans('messages.parrafoi3')}}</p>
                     </div> 
                 </div>
+                <a><b>{{ trans('messages.idioma') }}</b></a>
+                <ul>
+                    <li><a href="{{ url('lang', ['en']) }}"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
+                    <li><a href="{{ url('lang', ['es']) }}"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
+                    <li><a href="{{ url('lang', ['eus']) }}"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
+                </ul>
             </section>
         </aside>
         <main id="page-content-wrapper">

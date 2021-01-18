@@ -1,6 +1,7 @@
 <?php
-return[
+return [
 
+    //Landing Page
     'logo' => 'Interesgune bat',
     'idioma' => 'Hizkuntza aldatu',
     'ideat' => 'Zer da PicSite?',
@@ -21,6 +22,7 @@ return[
     'inicios' => 'Saioa hasi',
     'einvitado' => 'Sartu gonbidatu gisa',
     'regist' => 'Erregistratu',
+    //Formulario Registro
     'nombre' => 'Izena',
     'apellido' => 'Abizena',
     'ciudad' => 'Hiria',
@@ -37,6 +39,7 @@ return[
     'placerepcontra' => 'Pasahitza errepikatu',
     'remember' => 'Saioa ez ahaztu',
     'botonregistro' => 'Erregistratu',
+    //Inicio de Sesion
     'contraolvidada' => 'Pasahitza berreskuratu',
     'iniciarheader' => 'Saioa Hasi',
     'iniciarcontra' => 'Pasahitza',

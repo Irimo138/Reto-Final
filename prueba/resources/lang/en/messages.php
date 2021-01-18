@@ -1,7 +1,7 @@
 <?php
-
 return [
-
+    
+    //Landing Page
     'logo' => 'A site of interest',
     'idioma' => 'Change language',
     'ideat' => 'What is PicSite about?',
@@ -22,6 +22,7 @@ return [
     'inicios' => 'Login',
     'einvitado' => 'Enter as Guest',
     'regist' =>'Sing in',
+    //Formulario Registro
     'nombre' => 'Name',
     'apellido' => 'Last name',
     'ciudad' => 'City',
@@ -38,6 +39,7 @@ return [
     'placerepcontra' => 'Repeat Password',
     'remember' => 'Remember me',
     'botonregistro' => 'Register',
+    //Inicio de Sesion
     'contraolvidada' => 'Forgot Your PassWord?',
     'iniciarheader' => 'Login',
     'iniciarcontra' => 'Password',

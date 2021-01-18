@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Linkear los estilos de la página-->
-        <link rel="stylesheet" href="css/formularioSpot.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/formularioSpot.css">
         <!--Linkear los scipts de bootstrap-->
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/popper.min.js"></script>
@@ -14,12 +14,12 @@
         <!--Enlaces de Leaflet-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-        <title>Document</title>
+        <title>PicSite</title>
     </head>
     <body class="antialiased">
-        <h1>Crear un nuevo Spot</h1>
-        <section>
-            <article class="card mx-auto col-7">
+        <section id="page-content-wrapper">
+            <h1>PicSite</h1>
+            <article class="card mx-auto col-xs-12 col-sm-10 col-md-10 col-lg-8">
                 <form method="POST" action="{{route("nuevoSpot")}}" enctype="multipart/form-data">
                     @csrf
 
@@ -42,7 +42,7 @@
                         <input type="string" class="form-control mx-auto col-4" name="longitud" id="longitud">
                     </div>
                     <br>
-                    <div id="mapid" style="width: 600px; height: 400px; position: relative; border: solid 1px lightgrey; border-radius: 3px" class=" mt-2 mb-2 mx-auto leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0">
+                    <div id="mapid" style="width: 100%; height: 60vh; position: relative; border: solid 1px lightgrey; border-radius: 3px" class=" mt-2 mb-2 mx-auto leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0">
                         <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
                             <div class="leaflet-pane leaflet-tile-pane">
                                 <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
