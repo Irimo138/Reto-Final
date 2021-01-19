@@ -11,8 +11,8 @@ class SpotController extends Controller
     
     public function index()
     {
-        $spots = Spot::all();
-        return view('misSpots', compact('spots'));
+        $spots = Spot::where('user_id',auth()->user()->id);
+        return view('misSpots')->with('spots', $spots);
     }
     public function store(Request $request){
 
@@ -40,7 +40,7 @@ class SpotController extends Controller
        ]);
 
        //Al crear un nuevo spot te redirigirá a la página de explorador de spots
-       redirect('explorar');
+       return redirect()->route('explorador');
     }
     public function destroy(Spot $spot){
         
@@ -54,9 +54,7 @@ class SpotController extends Controller
     }
     public function edit($id){
         
-        $spots = App\Models\Spot::findOrFail($id);
-        $spots->delete();
-        return redirect("/spot");
+        //$spots = App\Models\Spot::findOrFail($id);
         
     }
     public function show(){

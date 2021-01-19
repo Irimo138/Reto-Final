@@ -108,29 +108,26 @@
                 <h3 class="imagotipo mx-auto">{{ trans('messages.logo') }}</h3>
                 <span class="d-block d-sm-block d-md-none" id="boton" onclick="openNav()">&#9776;</span>
             </section>
+
             <section class="container">
                 <div class="row">
                     @foreach($spots as $spot)
-                        <div class="col-4">
-                            <div class="card">
-                                <img class="img-fluid" src="{{asset($spot->url)}}" alt="">
-                                <h2 class="card-title">{{($spot->name)}}</h2>
-                                <div class="card-footer"></div>
-                                    <a href="{{route('edit', $spot)}}" class="btn-tbn-primary">Editar</a>
-
-                                    <form action="{{route('destroy', $spot)}}" method="POST" class="d-inline" >
-                                        @method('DELETE')
-                                        @csrf
-                                        <button id="boton-eliminar" class="btn btn-danger" type="submit">Eliminar</button>
-                                    </form>
-                                </div>
-                            
-                            </div>
-                            
+                    <a href=""{{route('info', $spot)}}"" class="redirigir col-3 m-0 p-0 seleccion">
+                        <img class="imagenSelec" src="{{asset($spot->url)}}">
+                        <div class="contenido">
+                            <h2>{{($spot->name)}}</h2>
                         </div>
-                    @endforeach
+                    </a>
+                    @endforeach 
+                    <a href="{{route('nuevoSpot')}}" class="redirigir col-3 m-0 p-0 seleccion">
+                        <img class="imagenSelec" src="images/carretera2.jpg">
+                        <div class="contenido">
+                            <h2>Publicar un Spot</h2>
+                        </div>
+                    </a>         
                 </div>
             </section>
+           
         </main>
     </body>
 </html>

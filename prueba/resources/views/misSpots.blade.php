@@ -80,18 +80,21 @@
             </section>
             <section class="container">
                 <div class="row">
-                    @foreach($spots as $spot)
+                <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center ">
+                    </section>
+                Prueba
+                @foreach($spots as $spot)
                         <div class="col-4">
                             <div class="card">
                                 <img class="img-fluid" src="{{asset($spot->url)}}" alt="">
                                 <h2 class="card-title">{{($spot->name)}}</h2>
                                 <div class="card-footer"></div>
-                                    <a href="{{route('edit', $spot)}}" class="btn-tbn-primary">Editar</a>
+                                    <a href="{{route('edit', $spot)}}" class="btn tbn-primary">Editar</a>
 
-                                    <form action="{{route('destroy', $spot)}}" class="d-inline" method="POST">
+                                    <form action="{{route('destroy', $spot)}}" method="POST" class="d-inline" >
                                         @method('DELETE')
                                         @csrf
-                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                        <button id="boton-eliminar" class="btn btn-danger" type="submit">Eliminar</button>
                                     </form>
                                 </div>
                             

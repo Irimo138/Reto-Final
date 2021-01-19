@@ -129,7 +129,7 @@
                     </section>
                     
                     <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center ">
-                        <a class="redirigir" href={{route("explorador")}}" >
+                        <a class="redirigir" href="{{route("explorador")}}" >
                             <img class="imagenSelec" src="images/ola.jpg">
                             <div class="contenido">
                                 <h2>{{ trans('messages.einvitado') }}</h2>
