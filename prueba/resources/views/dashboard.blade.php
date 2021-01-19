@@ -46,13 +46,13 @@
                 <h3 class="imagotipo mx-auto">{{ trans('messages.logo') }}</h3>
             </section>
             <section class="contenidoAside">
+                <a href="{{route("nuevoSpot")}}" class="btn btn-secondary">Nuevo Spot</a><br>
                 <a><b>{{ trans('messages.idioma') }}</b></a>
                 <ul>
                     <li><a href="{{ url('lang', ['en']) }}"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
                     <li><a href="{{ url('lang', ['es']) }}"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
                     <li><a href="{{ url('lang', ['eus']) }}"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
                 </ul>
-                <a href="{{route("nuevoSpot")}}" class="btn btn-primary">Nuevo Spot</a>
             </section>
         </aside>
         <main id="page-content-wrapper">

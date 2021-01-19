@@ -7,8 +7,6 @@ return [
     'ideat' => 'Zer da PicSite?',
     'parrafoi' => 'PicSite-k argazkilaritza guneak partekatzea eta hain gustuko ditugun leku ezkutu horiek aurkitzea du helburu.
     PicSite komunitateak argazkiak egiteko eta ezagutzeko toki berriak eskaintzen dizkizu. Zaindu itzazu, gure esku dago leku horiek zaintzea. ',
-    'parrafoi2' => 'PicSite-k argazkilaritza guneak partekatzea eta hain gustuko ditugun leku ezkutu horiek aurkitzea du helburu.
-    PicSite komunitateak argazkiak egiteko eta ezagutzeko toki berriak eskaintzen dizkizu. Zaindu itzazu, gure esku dago leku horiek gordetzea. ',
     'mas' => 'erakutsi gehiago...',
     'parrafoi3' => 'Gure orrian interesgarriak iruditzen zaizkizun lekuak parteka ditzakezu.
     Horrez gain, beste leku batzuk iruzkindu eta tokian ateratako argazkiak partekatu ditzakezu. Izan errespetua eta gozatu. ',

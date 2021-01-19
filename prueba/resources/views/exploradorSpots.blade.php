@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PicSite</title>
         <!--Linkear los estilos de la página-->
-        <link rel="stylesheet" href="css/estilosIndex.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/estilosIndex.css">
         <!--Linkear los scipts de bootstrap-->
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/popper.min.js"></script>
@@ -67,13 +67,25 @@
             </section>
         </aside>
         <main id="page-content-wrapper">
-            <aside id="cabeza" class="d-block d-xs-block d-sm-none row m-1 container-fluid">
+            <section id="cabeza" class="d-block d-xs-block d-sm-none row m-1 container-fluid">
                 <img id="logo" class="mx-auto p-1" src="images/logo12.png">
                 <h1 class="imagotipo mx-auto p-1">PicSite</h1>
                 <hr class="mx-auto linea" ></li>
                 <h3 class="imagotipo mx-auto">{{ trans('messages.logo') }}</h3>
                 <span class="d-block d-sm-block d-md-none" id="boton" onclick="openNav()">&#9776;</span>
-            </aside>
+            </section>
+            <section class="container">
+                <div class="row">
+                    @foreach($spots as $spot)
+                        <article class="seleccion caja col-12 col-md-3 p-0 m-0 text-center">
+                            <img class="imagenSelec" src="{{asset($spot->url)}}">
+                            <div class="contenido">
+                                <h2>{{($spot->name)}}</h2>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </section>
         </main>
     </body>
 </html>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 
 /*
@@ -34,11 +35,13 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/explorador', 'HomeController@index')->name('explorador');
+
 // LAS SIGUIENTES RUTAS REQUIEREN DE AUTENTIFICACIÓN
 Auth::routes();
 
-Route::group(['middleware'=>'auth'], function(){
-    Route::get('/spot',[\App\Http\Controllers\SpotController::class, 'index'])->name("spot");
+Route::group([ 'middleware'=>'auth'], function(){
+    Route::get('/spot',[\App\Http\Controllers\SpotController::class, 'index']);
     Route::get('/spot', [\App\Http\Controllers\SpotController::class, 'show']);
     Route::post('/spot', [\App\Http\Controllers\SpotController::class, 'store'])->name("nuevoSpot");
 });
