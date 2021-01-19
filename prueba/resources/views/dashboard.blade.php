@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+<html lang="en"><head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PicSite</title>
@@ -37,21 +35,21 @@
         </script>
     </head>
     <body id="wrapper">
-        <aside id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn d-block d-sm-none d-md-none" onclick="closeNav()">&times;</a>
+        <aside id="mySidenav" class="sidenav" style="width: 25%;">
+            <a href="javascript:void(0)" class="closebtn d-block d-sm-none d-md-none" onclick="closeNav()">×</a>
             <section class="row m-1">
                 <img id="logo" class="mx-auto p-1 mt-4" src="images/logo1.png">
                 <h1 class="imagotipo mx-auto p-1">PicSite</h1>
-                <hr class="mx-auto linea" >
-                <h3 class="imagotipo mx-auto">{{ trans('messages.logo') }}</h3>
+                <hr class="mx-auto linea">
+                <h3 class="imagotipo mx-auto">Un sitio de interés</h3>
             </section>
             <section class="contenidoAside">
-                <a href="{{route("nuevoSpot")}}" class="btn btn-secondary">Nuevo Spot</a><br>
-                <a><b>{{ trans('messages.idioma') }}</b></a>
+                <a href="https://localhost/Reto-Final/prueba/public/spot" class="btn btn-secondary">Nuevo Spot</a><br>
+                <a><b>Cambiar el idioma</b></a>
                 <ul>
-                    <li><a href="{{ url('lang', ['en']) }}"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
-                    <li><a href="{{ url('lang', ['es']) }}"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
-                    <li><a href="{{ url('lang', ['eus']) }}"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
+                    <li><a href="https://localhost/Reto-Final/prueba/public/lang/en"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
+                    <li><a href="https://localhost/Reto-Final/prueba/public/lang/es"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
+                    <li><a href="https://localhost/Reto-Final/prueba/public/lang/eus"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
                 </ul>
             </section>
         </aside>
@@ -113,5 +111,5 @@
                 </section>
             </div>
         </main>
-    </body>
-</html>
+    
+</body></html>
