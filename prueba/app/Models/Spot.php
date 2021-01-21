@@ -12,6 +12,6 @@ class Spot extends Model
     public function user(){
 
         //relacion uno a muchos inversa.
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Models\User');
     }
 }
