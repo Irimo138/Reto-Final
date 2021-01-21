@@ -17,7 +17,7 @@ use App\Http\Controllers;
 */
 
 /*
-RUTAS PARA LA TRADUCCIÒN
+RUTAS PARA LA TRADUCCIÓN
 */
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
@@ -31,11 +31,10 @@ Route::group(['middleware' => ['web']], function () {
     ]);
 });
 
-Route::get('/', function () {
-    return view('index');
-});
-
-
+/*
+RUTAS SIN AUTENTICACIÓN
+*/
+Route::get('/', function () {return view('index');});
 Route::get('/explorar', [\App\Http\Controllers\HomeController::class, 'index'])->name("explorador");
 Route::get('/explorar/{id}/info', [\App\Http\Controllers\HomeController::class, 'info'])->name("info");
 

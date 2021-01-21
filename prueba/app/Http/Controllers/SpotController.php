@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use Storage;
 
 use Illuminate\Http\Request;
@@ -11,8 +12,11 @@ class SpotController extends Controller
     
     public function index()
     {
-        $spots = Spot::where('user_id',auth()->user()->id);
-        return view('misSpots')->with('spots', $spots);
+        $id = Auth::user()->id;
+        $spots = Spot::where('user_id',$id)->get();
+
+        return view('misSpots', ['spots' => $spots]);
+
     }
     public function store(Request $request){
 
@@ -54,7 +58,8 @@ class SpotController extends Controller
     }
     public function edit($id){
         
-        //$spots = App\Models\Spot::findOrFail($id);
+        $spots = Spot::where('id',"=",$id);
+        return view('editar')->with(compact('spots'));
         
     }
     public function show(){

@@ -7,6 +7,6 @@
     <title>Editar</title>
 </head>
 <body>
-    
+    {{$spots->titulo}}
 </body>
 </html>
