@@ -16,10 +16,10 @@ class HomeController extends Controller
         return view('dashboard')->with('spots', $spots);
     }
     
-    public function info($id){
+    public function info(Spot $spots){
         
         //en la siguiente variable se almacenan todos los registros de spot
-        $spots = Spot::where('id')->$id;
+        $spot = Spot::where('id',$spots->id);
 
         //utilizamos compact para que la vista pueda acceder a los registros
         return view('infoSpot')->with('spots', $spots);

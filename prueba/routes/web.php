@@ -38,6 +38,7 @@ Route::get('/temporal', function () {
     return view('infoSpot');
 });
 
+
 Route::get('/explorar', [\App\Http\Controllers\HomeController::class, 'index'])->name("explorador");
 Route::get('/explorar/{id}/info', [\App\Http\Controllers\HomeController::class, 'info'])->name("info");
 
