@@ -36,7 +36,7 @@ Route::get('/', function () {
 });
 
 Route::get('/explorar', [\App\Http\Controllers\HomeController::class, 'index'])->name("explorador");
-Route::get('/explorar/{id}/info', [\App\Http\Controllers\HomeController::class, 'info'])->name("info");
+Route::get('/explorar/{id}/info', [\App\Http\Controllers\HomeController::class, 'info'($id)])->name("info");
 
 
 // LAS SIGUIENTES RUTAS REQUIEREN DE AUTENTIFICACIÓN
@@ -51,11 +51,9 @@ Route::group([ 'middleware'=>'auth'], function(){
     //Rutas para la edicion y el borrado de tus spots
     Route::delete('/destroy/{id}', [\App\Http\Controllers\SpotController::class, 'destroy'])->name("destroy");
     Route::get('/edit/{id}/edit', [\App\Http\Controllers\SpotController::class, 'edit'])->name("edit");
+    
+    Route::get('/dashboard', [\App\Http\Controllers\HomeController::class, 'index'])->name("dashboard");
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 

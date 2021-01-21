@@ -74,7 +74,7 @@
             <span class="d-block d-sm-block d-md-none" id="boton" onclick="openNav()">&#9776;</span>
                 <h2>Crear Spot:</h2>
                 <article class="card px-5 py-5 mx-auto my-auto col-xs-12 col-sm-10 col-md-10 col-lg-8">
-                    <form method="POST" action="{{route("nuevoSpot")}}" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('nuevoSpot')}}" enctype="multipart/form-data">
                         @csrf
                         <p>Nombre:</p>
                         <input type="string" class="form-control" name="name" >

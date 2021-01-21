@@ -41,4 +41,7 @@ return [
     'contraolvidada' => 'Pasahitza berreskuratu',
     'iniciarheader' => 'Saioa Hasi',
     'iniciarcontra' => 'Pasahitza',
+    //Explorador Spots
+    'bienvenido' => 'Ongi Etorri',
+    'nuevospot' => 'Spot berria sortu'
 ];

@@ -5,11 +5,11 @@
         <!--Linkear los estilos de la página-->
         <link rel="stylesheet" href="css/estilosIndex.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!--Linkear los scipts de bootstrap-->
+        <!--Linkear los scripts de bootstrap-->
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>    
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script>
             window.onload = iniciar;
             let sizze = window.screen.width;
@@ -35,80 +35,62 @@
         </script>
     </head>
     <body id="wrapper">
-        <aside id="mySidenav" class="sidenav" style="width: 25%;">
-            <a href="javascript:void(0)" class="closebtn d-block d-sm-none d-md-none" onclick="closeNav()">×</a>
-            <section class="row m-1">
-                <img id="logo" class="mx-auto p-1 mt-4" src="images/logo1.png">
-                <h1 class="imagotipo mx-auto p-1">PicSite</h1>
-                <hr class="mx-auto linea">
-                <h3 class="imagotipo mx-auto">Un sitio de interés</h3>
-            </section>
-            <section class="contenidoAside">
-                <a href="https://localhost/Reto-Final/prueba/public/spot" class="btn btn-secondary">Nuevo Spot</a><br>
-                <a><b>Cambiar el idioma</b></a>
+    <aside id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn d-block d-sm-none d-md-none" onclick="closeNav()">&times;</a>
+            <div class="row">
+                <img class="col-3 ml-auto p-3" id="logo" src="images/logo1.png">
+                <h1 class="col-7 mx-auto p-3">PicSite</h1>
+            </div>
+            <hr class="linea mx-auto">
+            <div class="row">
+                <h5 class="mx-auto">{{trans('messages.bienvenido')}},  {{Auth::user()->nickname}}</h5>
+            </div>
+            <div class="row">
+                <a href="https://localhost/Reto-Final/prueba/public/spot" class="btn btn-secondary mx-auto">{{trans('messages.nuevospot')}}</a><br>
+            </div>
+            <br>
+            <div class="row">
+                <div class="btn-group mx-auto">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Ordenar por:</button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Más Antiguos</a>
+                        <a class="dropdown-item" href="#">Más Recientes</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" href="#">Montaña</a>
+                        <a class="dropdown-item" href="#">Animales</a>
+                        <a class="dropdown-item" href="#">Lugares Abandonados</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contenidoAside" style="height: 20vh">
+                <a><b>{{ trans('messages.idioma') }}</b></a>
                 <ul>
-                    <li><a href="https://localhost/Reto-Final/prueba/public/lang/en"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
-                    <li><a href="https://localhost/Reto-Final/prueba/public/lang/es"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
-                    <li><a href="https://localhost/Reto-Final/prueba/public/lang/eus"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
+                    <li><a href="{{ url('lang', ['en']) }}"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
+                    <li><a href="{{ url('lang', ['es']) }}"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
+                    <li><a href="{{ url('lang', ['eus']) }}"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
                 </ul>
-            </section>
+            </div>
         </aside>
         <main id="page-content-wrapper">
             <div class="row">
-            <section class="seleccion caja col-lg-4 col-md-6 col-sm-12 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="images/pared.jpg">
-                    <div class="contenido">
-                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h4>Nombre del Lugar</h4></a>
-                    </div>
-                </section>
-                <section class="seleccion caja col-lg-4 col-md-6 col-sm-12 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="images/pared.jpg">
-                    <div class="contenido">
-                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h4>Nombre del Lugar</h4></a>
-                    </div>
-                </section>
-                <section class="seleccion caja col-lg-4 col-md-6 col-sm-12 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="images/pared.jpg">
-                    <div class="contenido">
-                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h4>Nombre del Lugar</h4></a>
-                    </div>
-                </section>
-                <section class="seleccion caja col-lg-4 col-md-6 col-sm-12 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="images/pared.jpg">
-                    <div class="contenido">
-                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h4>Nombre del Lugar</h4></a>
-                    </div>
-                </section>
-                <section class="seleccion caja col-lg-4 col-md-6 col-sm-12 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="images/pared.jpg">
-                    <div class="contenido">
-                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h4>Nombre del Lugar</h4></a>
-                    </div>
-                </section>
-                <section class="seleccion caja col-lg-4 col-md-6 col-sm-12 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="images/pared.jpg">
-                    <div class="contenido">
-                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h4>Nombre del Lugar</h4></a>
-                    </div>
-                </section>
-                <section class="seleccion caja col-lg-4 col-md-6 col-sm-12 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="images/pared.jpg">
-                    <div class="contenido">
-                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h4>Nombre del Lugar</h4></a>
-                    </div>
-                </section>
-                <section class="seleccion caja col-lg-4 col-md-6 col-sm-12 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="images/pared.jpg">
-                    <div class="contenido">
-                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h4>Nombre del Lugar</h4></a>
-                    </div>
-                </section>
-                <section class="seleccion caja col-lg-4 col-md-6 col-sm-12 p-0 m-0 text-center">
-                    <img class="imagenSelec" src="images/pared.jpg">
-                    <div class="contenido">
-                        <a class="redirigir" data-toggle="modal" data-target="#modalSesion"><h4>Nombre del Lugar</h4></a>
-                    </div>
-                </section>
+            <section class="container">
+                <div class="row">
+                    @foreach($spots as $spot)
+                    <a href="{{route('info', $spot)}}" class="redirigir col-3 m-0 p-0 seleccion">
+                        <img class="imagenSelec" src="{{asset($spot->url)}}">
+                        <div class="contenido">
+                            <h2>{{($spot->name)}}</h2>
+                        </div>
+                    </a>
+                    @endforeach 
+                    <a href="{{route('nuevoSpot')}}" class="redirigir col-3 m-0 p-0 seleccion">
+                        <img class="imagenSelec" src="images/carretera2.jpg">
+                        <div class="contenido">
+                            <h2>Publicar un Spot</h2>
+                        </div>
+                    </a>         
+                </div>
+            </section>
             </div>
         </main>
     

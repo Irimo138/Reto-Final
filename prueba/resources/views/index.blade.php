@@ -48,21 +48,22 @@
                 <h3 class="mx-auto">{{trans('messages.logo')}}</h3>
                 <h5 class="mx-auto">{{trans('messages.ideat')}}</h5>
             </div>
-                    <p class="col-10 mx-auto text-justify text-dark">{{trans('messages.parrafoi')}}</p>
-                    <a href=".Foo" class="btn btn-default col-10 mx-auto" data-toggle="collapse">{{trans('messages.mas')}}</a> 
-                    <hr class="mx-auto linea">
-                    <div class="collapse Foo">
-                        <p class="col-10 mx-auto text-justify text-dark">{{trans('messages.parrafoi3')}}</p>
-                    </div>
-                </div>
-                <div style="height: 20vh">
-                    <a><b>{{ trans('messages.idioma') }}</b></a>
-                    <ul>
-                        <li><a href="{{ url('lang', ['en']) }}"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
-                        <li><a href="{{ url('lang', ['es']) }}"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
-                        <li><a href="{{ url('lang', ['eus']) }}"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
-                    </ul>
-                </div>
+            <p class="col-10 mx-auto text-justify text-dark">{{trans('messages.parrafoi')}}</p>
+            <div class="row">
+                <a href=".Foo" class="btn btn-default col-4 mx-auto" data-toggle="collapse">{{trans('messages.mas')}}</a>
+            </div>
+            <hr class="mx-auto linea">
+            <div class="collapse Foo">
+                <p class="col-10 mx-auto text-justify text-dark">{{trans('messages.parrafoi3')}}</p>
+            </div>
+            <div class="contenidoAside" style="height: 20vh">
+                <a><b>{{ trans('messages.idioma') }}</b></a>
+                <ul>
+                    <li><a href="{{ url('lang', ['en']) }}"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
+                    <li><a href="{{ url('lang', ['es']) }}"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
+                    <li><a href="{{ url('lang', ['eus']) }}"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
+                </ul>
+            </div>
         </aside>
         <main id="page-content-wrapper">
             <article id="cabeza" class="d-block d-xs-block d-sm-none row m-1 container-fluid">
