@@ -41,5 +41,7 @@ return [
     'contraolvidada' => 'Forgot Your PassWord?',
     'iniciarheader' => 'Login',
     'iniciarcontra' => 'Password',
-
+    //Explorador Spots
+    'bienvenido' => 'Welcome',
+    'nuevospot' => 'New Spot'
 ];

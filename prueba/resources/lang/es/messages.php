@@ -41,4 +41,8 @@ return [
     'contraolvidada' => 'Recuperar contraseña',
     'iniciarheader' => 'Iniciar Sesión',
     'iniciarcontra' => 'Contraseña',
+    //Explorador Spots
+    'bienvenido' => 'Bienvenido',
+    'nuevospot' => 'Nuevo Spot'
+
 ];

@@ -64,7 +64,7 @@
 main{
     width: 75vw;
     height: 100vh;
-    background-color: #161616;
+    background-color: #a2a2a2;
 }
 .imagenesCarrusel{
     height: 65vh;
@@ -111,6 +111,7 @@ main{
     width: 80%;
     background-color: #a3a3a3;
 }
+
 /*ordenador */
 @media only screen and (min-width: 768px){
     #wrapper {
