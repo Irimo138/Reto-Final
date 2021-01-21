@@ -70,35 +70,41 @@
         </script>
     </head>
     <body id="wrapper">
-        <aside id="mySidenav" class="sidenav">
+    <aside id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn d-block d-sm-none d-md-none" onclick="closeNav()">&times;</a>
-            <section class="row m-1">
-                <img id="logo" class="mx-auto p-1 mt-4" src="images/logo1.png">
-                <h1 class="imagotipo mx-auto p-1">PicSite</h1>
-                <hr class="mx-auto linea" >
-                <h3 class="imagotipo mx-auto">{{ trans('messages.logo') }}</h3>
-            </section>
-            <section class="contenidoAside">
+            <div class="row">
+                <img class="col-3 ml-auto p-3" id="logo" src="images/logo1.png">
+                <h1 class="col-7 mx-auto p-3">PicSite</h1>
+            </div>
+            <hr class="linea mx-auto">
+            <div class="row">
+                <h5 class="mx-auto">{{trans('messages.bienvenido')}},  {{Auth::user()->nickname}}</h5>
+            </div>
+            <div class="row">
+                <a href="https://localhost/Reto-Final/prueba/public/spot" class="btn btn-secondary mx-auto">{{trans('messages.nuevospot')}}</a><br>
+            </div>
+            <br>
+            <div class="row">
+                <div class="btn-group mx-auto">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Ordenar por:</button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Más Antiguos</a>
+                        <a class="dropdown-item" href="#">Más Recientes</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" href="#">Montaña</a>
+                        <a class="dropdown-item" href="#">Animales</a>
+                        <a class="dropdown-item" href="#">Lugares Abandonados</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contenidoAside" style="height: 20vh">
                 <a><b>{{ trans('messages.idioma') }}</b></a>
                 <ul>
                     <li><a href="{{ url('lang', ['en']) }}"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
                     <li><a href="{{ url('lang', ['es']) }}"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
                     <li><a href="{{ url('lang', ['eus']) }}"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
                 </ul>
-                <h5>{{trans('messages.ideat')}}</h5>
-                <div class="d-none d-sm-none d-md-block">
-                    <p class="texto p-3 text-dark">{{trans('messages.parrafoi')}}</p>
-
-                </div>
-                <div class="d-block d-sm-block d-md-none">
-                    <p class="texto p-3 text-dark">{{trans('messages.parrafoi2')}}</p>
-                    <a href=".Foo" class="btn btn-default colorpalabra" data-toggle="collapse">{{trans('messages.mas')}}</a> 
-                    <hr  class="mx-auto linea">
-                    <div class="collapse Foo">  
-                        <p class="texto p-3 text-dark">{{trans('messages.parrafoi3')}}</p>
-                    </div> 
-                </div>
-            </section>
+            </div>
         </aside>
         <main id="page-content-wrapper">
             <section id="cabeza" class="d-block d-xs-block d-sm-none row m-1 container-fluid">
