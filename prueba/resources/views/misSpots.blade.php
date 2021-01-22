@@ -89,8 +89,7 @@
                                 </div>
                             </a>
                             <div class="card-footer">
-                                <a href="{{route('edit', $spot->id)}}" class="btn tbn-primary">Editar</a>
-
+                                <a href="{{route('edit', $spot)}}" class="btn tbn-primary">Editar</a>
                                 <form action="{{route('destroy', $spot)}}" method="POST" class="d-inline" >
                                     @method('DELETE')
                                     @csrf

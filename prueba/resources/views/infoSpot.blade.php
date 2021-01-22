@@ -6,6 +6,6 @@
     <title>infospot</title>
 </head>
 <body>
-    <h1>{{$spots->name}}</h1>
+    <h1>{{$spot->name}}</h1>
 </body>
 </html>

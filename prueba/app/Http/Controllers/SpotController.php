@@ -6,14 +6,22 @@ use Storage;
 
 use Illuminate\Http\Request;
 use App\Models\Spot;
+use App\Models\User;
 
 class SpotController extends Controller
 {
     
     public function index()
     {
-        $id = Auth::user()->id;
-        $spots = Spot::where('user_id',$id)->get();
+        //en la siguiente variable se almacenan todos los registros de spot
+        $spots = Spot::all();
+        return view('dashboard')->with('spots', $spots);
+    }
+    public function mios()
+    {
+        //Condicion para mostrar solo mis spots
+        $usuario = Auth::user()->id;
+        $spots = Spot::all()->where('user_id', $usuario);
 
         return view('misSpots', ['spots' => $spots]);
 
@@ -46,20 +54,22 @@ class SpotController extends Controller
        //Al crear un nuevo spot te redirigirá a la página de explorador de spots
        return redirect()->route('explorador');
     }
-    public function destroy(Spot $spot){
+    public function destroy($id){
         
+        $spot = Spot::find($id);
         //Para borrar la imagen del servidor, no solo la url de nuestra base de datos, tenemos que cambiarle la url de donde se almacena por la siguiente.
         $url = str_replace('storage','public',$spot->url);
         Storage::delete($url);
 
         $spot->delete();
-        return redirect()->route('mios')->with('eliminado','ok');
+        return redirect()->route('mios');
         
     }
     public function edit($id){
         
-        $spots = Spot::where('id',"=",$id);
-        return view('editar')->with(compact('spots'));
+        $spot = Spot::find($id);
+
+        return view('editar')->with('spots', $spot);
         
     }
     public function show(){
