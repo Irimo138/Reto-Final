@@ -46,6 +46,8 @@
             <hr class="linea mx-auto">
             <div class="row">
                 <h3 class="mx-auto">{{trans('messages.logo')}}</h3>
+            </div>
+            <div class="row">
                 <h5 class="mx-auto">{{trans('messages.ideat')}}</h5>
             </div>
             <p class="col-10 mx-auto text-justify text-dark">{{trans('messages.parrafoi')}}</p>

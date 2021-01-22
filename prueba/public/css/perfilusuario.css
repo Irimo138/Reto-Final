@@ -1,12 +1,14 @@
-@font-face{
-	font-family: Quicksand;
-  	src: url(fuente/Quicksand-VariableFont_wght.ttf) format('truetype');
+body{
+    background-color: lightgray;
 }
 *{
     padding: 0;
     margin: 0;
     transition:all .5s ease-in-out;
     font-family: Quicksand;
+}
+h2{
+    text-align: center;
 }
 .sidenav {
     height: 100%;
@@ -15,10 +17,9 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #ffb875;
-    overflow-x: hidden; 
+    background-color: #ffbb7b;
+    overflow-x: hidden;
     transition: 0.5s;
-
 }
 .sidenav .closebtn {
     text-decoration: none;
@@ -28,6 +29,9 @@
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+}
+.imagotipo{
+    text-align: center;
 }
 .imagenSelec{
     width: 100%;
@@ -46,6 +50,9 @@
 .seleccion a{
     text-decoration: none;
 }
+#logo{
+    width: 6em;
+}
 #logo:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
@@ -54,31 +61,13 @@
     color: #d7cec7;
     font-weight: 900;
 }
-#carrusel{
-    background-color: #565656;
-}
-#page-content-wrapper {
-    width: 100%;
-    height: 100%;
-}
-main{
-    width: 75vw;
-    height: 100vh;
-    background-color: #a2a2a2;
-}
-.imagenesCarrusel{
-    height: 65vh;
-    width: 100%;
-}
-#carrusel img:hover{
-    filter: brightness(0.7);
-}
-.contenido{
+.sidebar-nav {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: white;
+    top: 0;
+    width: 25vw;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .idiomas{
     width: 3em;
@@ -100,19 +89,22 @@ main{
 .contenidoAside ul li{
     display: inline;
 }
-.redirigir a{
-    text-decoration: none;
-    color: white;
+.colorpalabra{
+    color: #76323f;
 }
-.botonf{
-    color: black;
+.texto{
+    text-align: justify;
+    font-weight: 600;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+}
+#cuerpo{
+    width: 75vw;
+    float: right;
 }
 .linea{
     width: 80%;
     background-color: #a3a3a3;
-}
-a{
-    text-decoration: none;
 }
 /*ordenador */
 @media only screen and (min-width: 768px){
@@ -146,7 +138,7 @@ a{
     .sidenav a {
         font-size: 18px;
     }
-    #cabeza{
-        color:#76323f;
+    #cuerpo{
+        width: 100vw;
     }
 }

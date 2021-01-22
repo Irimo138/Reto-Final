@@ -41,33 +41,27 @@
     </head>
     <body class="antialiased">
     <aside id="mySidenav" class="sidenav">
-        <section class="row m-1">
             <a href="javascript:void(0)" class="closebtn d-block d-sm-none d-md-none" onclick="closeNav()">&times;</a>
-            <img id="logo" class="mx-auto p-1 mt-4" src="images/logo1.png">
-                <h1 class="imagotipo mx-auto p-1">PicSite</h1>
-                <hr class="mx-auto linea" >
-                <h3 class="imagotipo mx-auto">{{ trans('messages.logo') }}</h3>
-            </section>
-            <section class="contenidoAside">
+            <div class="row">
+                <img class="col-3 ml-auto p-3" id="logo" src="images/logo1.png">
+                <h1 class="col-7 mx-auto p-3">PicSite</h1>
+            </div>
+            <hr class="linea mx-auto">
+            <div class="row">
+                <h3 class="mx-auto">{{trans('messages.logo')}}</h3>
+            </div>
+            <div class="row">
+                <h5 class="mx-auto">{{trans('messages.ideat')}}</h5>
+            </div>
+            <p class="col-10 mx-auto text-justify text-dark">{{trans('messages.parrafoi')}}</p>
+            <div class="contenidoAside" style="height: 20vh">
                 <a><b>{{ trans('messages.idioma') }}</b></a>
                 <ul>
                     <li><a href="{{ url('lang', ['en']) }}"><img class="idiomaBandera" src="images/banderaIngles.png"></a></li>
                     <li><a href="{{ url('lang', ['es']) }}"><img class="idiomaBandera" src="images/banderaCastellano.jpg"></a></li>
                     <li><a href="{{ url('lang', ['eus']) }}"><img class="idiomaBandera" src="images/banderaEsukadi.png"></a></li>
                 </ul>
-                <h5>{{trans('messages.ideat')}}</h5>
-                <div class="d-none d-sm-none d-md-block">
-                    <p class="texto p-3 text-dark">{{trans('messages.parrafoi')}}</p>
-
-                </div>
-                <div class="d-block d-sm-block d-md-none">
-                    <a href=".Foo" class="btn btn-default colorpalabra" data-toggle="collapse">{{trans('messages.mas')}}</a> 
-                    <hr  class="mx-auto linea">
-                    <div class="collapse Foo">  
-                        <p class="texto p-3 text-dark">{{trans('messages.parrafoi3')}}</p>
-                    </div> 
-                </div>
-            </section>
+            </div>
         </aside>
         <div id="cuerpo">
             <section id="page-content-wrapper">
@@ -76,20 +70,20 @@
                 <article class="card px-5 py-5 mx-auto my-auto col-xs-12 col-sm-10 col-md-10 col-lg-8">
                     <form method="POST" action="{{route('nuevoSpot')}}" enctype="multipart/form-data">
                         @csrf
-                        <p>Nombre:</p>
+                        <p>{{trans('messages.crearnombre')}}:</p>
                         <input type="string" class="form-control" name="name" >
                         <br>
                         
-                        <p>Descripción</p>
+                        <p>{{trans('messages.creardescripcion')}}:</p>
                         <input type="text" class="form-control" name="descripcion">
                         <br>
-                        <p>Imagen</p>
+                        <p>{{trans('messages.crearimagen')}}:</p>
                         <input type="file" class="form-control btn" name="file" id="" accept="image/*">
                         <br>
                         @error('file')
                             <small class="text-danger">{{$message}}</small>
                         @enderror
-                        <p>Coordenadas:</p>
+                        <p>{{trans('messages.crearcoordenadas')}}:</p>
                         <div class="row">
                             <input type="string" class="form-control mx-auto col-4" name="latitud" id="latitud">
                             <input type="string" class="form-control mx-auto col-4" name="longitud" id="longitud">

@@ -43,6 +43,10 @@ return [
     'iniciarcontra' => 'Contraseña',
     //Explorador Spots
     'bienvenido' => 'Bienvenido',
-    'nuevospot' => 'Nuevo Spot'
-
+    'nuevospot' => 'Nuevo Spot',
+    //Crear Spot
+    'crearnombre' => 'Nombre',
+    'creardescripcion' =>'Descripción',
+    'crearimagen'=>'Imagen',
+    'crearcoordenadas'=>'Coordenadas',
 ];

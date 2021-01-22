@@ -43,5 +43,10 @@ return [
     'iniciarcontra' => 'Password',
     //Explorador Spots
     'bienvenido' => 'Welcome',
-    'nuevospot' => 'New Spot'
+    'nuevospot' => 'New Spot',
+    //Crear Spot
+    'crearnombre' => 'Name',
+    'creardescripcion' =>'Description',
+    'crearimagen'=>'Image',
+    'crearcoordenadas'=>'Coordinates',
 ];

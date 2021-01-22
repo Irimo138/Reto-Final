@@ -1,17 +1,21 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PicSite</title>
         <!--Linkear los estilos de la página-->
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/estilosIndex.css">
+        <link rel="stylesheet" href="css/perfilusuario.css">
         <!--Linkear los scripts de bootstrap-->
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
+        <!--Enlaces de Leaflet-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
         <script>
-            window.onload = iniciar;
+           window.onload = iniciar;
             let sizze = window.screen.width;
 
             function iniciar(){
@@ -33,8 +37,9 @@
                 document.getElementById("page-content-wrapper").style.marginLeft= "0";
             }
         </script>
+        <title>PicSite</title>
     </head>
-    <body id="wrapper">
+    <body class="antialiased">
     <aside id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn d-block d-sm-none d-md-none" onclick="closeNav()">&times;</a>
             <div class="row">
@@ -43,24 +48,14 @@
             </div>
             <hr class="linea mx-auto">
             <div class="row">
-                <h5 class="mx-auto">{{trans('messages.bienvenido')}},  <span><a href="https://localhost/Reto-Final/prueba/public/usuario">{{Auth::user()->nickname}}</a></span></h5>
+                <h5 class="mx-auto">{{trans('messages.bienvenido')}},  {{Auth::user()->nickname}}</h5>
             </div>
             <div class="row">
                 <a href="https://localhost/Reto-Final/prueba/public/spot" class="btn btn-secondary mx-auto">{{trans('messages.nuevospot')}}</a><br>
             </div>
             <br>
             <div class="row">
-                <div class="btn-group mx-auto">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Ordenar por:</button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Más Antiguos</a>
-                        <a class="dropdown-item" href="#">Más Recientes</a>
-                        <hr class="dropdown-divider">
-                        <a class="dropdown-item" href="#">Montaña</a>
-                        <a class="dropdown-item" href="#">Animales</a>
-                        <a class="dropdown-item" href="#">Lugares Abandonados</a>
-                    </div>
-                </div>
+                <a href="https://localhost/Reto-Final/prueba/public/dashboard" class="btn btn-secondary mx-auto">Volver</a>
             </div>
             <div class="contenidoAside" style="height: 20vh">
                 <a><b>{{ trans('messages.idioma') }}</b></a>
@@ -71,33 +66,25 @@
                 </ul>
             </div>
         </aside>
-        <main id="page-content-wrapper">
-            <section id="cabeza" class="d-block d-xs-block d-sm-none row m-1 container-fluid">
-                <img id="logo" class="mx-auto p-1" src="images/logo12.png">
-                <h1 class="imagotipo mx-auto p-1">PicSite</h1>
-                <hr class="mx-auto linea" ></li>
-                <h3 class="imagotipo mx-auto">{{ trans('messages.logo') }}</h3>
-                <span class="d-block d-sm-block d-md-none" id="boton" onclick="openNav()">&#9776;</span>
-            </section>
-
-            <section class="container">
-                <div class="row">
-                    @foreach($spots as $spot)
-                    <a href="{{route('info', $spot)}}" class="redirigir col-3 m-0 p-0 seleccion">
-                        <img class="imagenSelec" src="{{asset($spot->url)}}">
-                        <div class="contenido">
-                            <h2>{{($spot->name)}}</h2>
-                        </div>
-                    </a>
-                    @endforeach 
-                    <a href="{{route('nuevoSpot')}}" class="redirigir col-3 m-0 p-0 seleccion">
-                        <img class="imagenSelec" src="images/carretera2.jpg">
-                        <div class="contenido">
-                            <h2>Publicar un Spot</h2>
-                        </div>
-                    </a>         
+        <div id="cuerpo">
+            <div class="bg-white m-5 p-5" style="height:100vh">
+                <h1>{{Auth::user()->nickname}}</h1>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Perfil</a>
+                        <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Spots</a>
+                        <a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Configuración</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <h5>{{Auth::user()->city}}</h5>
+                        <p>Fecha de nacimiento: {{Auth::user()->fecha}}</p>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Aqui se mostrarán los Spots creados por el usuario</div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Configuración</div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
     </body>
 </html>
