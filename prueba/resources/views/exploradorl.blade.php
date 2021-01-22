@@ -78,7 +78,7 @@
             </div>
             <hr class="linea mx-auto">
             <div class="row">
-                <h5 class="mx-auto">{{trans('messages.bienvenido')}},  {{Auth::user()->nickname}}</h5>
+                <h5 class="mx-auto">{{trans('messages.bienvenido')}}</h5>
             </div>
             <div class="row">
                 <a href="https://localhost/Reto-Final/prueba/public/spot" class="btn btn-secondary mx-auto">{{trans('messages.nuevospot')}}</a><br>
@@ -118,19 +118,13 @@
             <section class="container">
                 <div class="row">
                     @foreach($spots as $spot)
-                    <a href=""{{route('info', $spot)}}"" class="redirigir col-3 m-0 p-0 seleccion">
+                    <a href="{{route('info', $spot)}}" class="redirigir col-3 m-0 p-0 seleccion">
                         <img class="imagenSelec" src="{{asset($spot->url)}}">
                         <div class="contenido">
                             <h2>{{($spot->name)}}</h2>
                         </div>
                     </a>
-                    @endforeach 
-                    <a href="{{route('nuevoSpot')}}" class="redirigir col-3 m-0 p-0 seleccion">
-                        <img class="imagenSelec" src="images/carretera2.jpg">
-                        <div class="contenido">
-                            <h2>Publicar un Spot</h2>
-                        </div>
-                    </a>         
+                    @endforeach        
                 </div>
             </section>
            

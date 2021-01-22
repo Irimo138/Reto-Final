@@ -17,7 +17,7 @@ use App\Http\Controllers;
 */
 
 /*
-RUTAS PARA LA TRADUCCIÒN
+RUTAS PARA LA TRADUCCIÓN
 */
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', function () {
@@ -42,22 +42,24 @@ Route::get('/usuario', function(){
 });
 
 Route::get('/explorar', [\App\Http\Controllers\HomeController::class, 'index'])->name("explorador");
-Route::get('/explorar/{id}/info', [\App\Http\Controllers\HomeController::class, 'info'])->name("info");
+Route::get('/informacion/{id}', '\App\Http\Controllers\HomeController@info')->name("info");
 
 // LAS SIGUIENTES RUTAS REQUIEREN DE AUTENTIFICACIÓN
 Auth::routes();
 
 Route::group([ 'middleware'=>'auth'], function(){
     //ruta que te redirige a la vista de tus spots
-    Route::get('/mios',[\App\Http\Controllers\SpotController::class, 'index'])->name('mios');
+    Route::get('/mios',[\App\Http\Controllers\SpotController::class, 'mios'])->name('mios');
+
     //Rutas para crear y mostrar los spots en la vista spots
     Route::get('/spot', [\App\Http\Controllers\SpotController::class, 'show']);
     Route::post('/spot', [\App\Http\Controllers\SpotController::class, 'store'])->name("nuevoSpot");
-    //Rutas para la edicion y el borrado de tus spots
-    Route::delete('/destroy/{id}', [\App\Http\Controllers\SpotController::class, 'destroy'])->name("destroy");
-    Route::get('/edit/{id}/edit', [\App\Http\Controllers\SpotController::class, 'edit'])->name("edit");
     
-    Route::get('/dashboard', [\App\Http\Controllers\HomeController::class, 'index'])->name("dashboard");
+    //Rutas para la edicion y el borrado de tus spots
+    Route::delete('/destroy/{id}', 'SpotController@destroy')->name("destroy");
+    Route::put('/edit/{spot}', 'SpotController@edit')->name('edit');
+    
+    Route::get('/dashboard', [\App\Http\Controllers\SpotController::class, 'index'])->name("dashboard");
 });
 
 require __DIR__.'/auth.php';

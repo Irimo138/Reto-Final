@@ -83,7 +83,7 @@
             <section class="container">
                 <div class="row">
                     @foreach($spots as $spot)
-                    <a href="{{route('info', $spot)}}" class="redirigir col-3 m-0 p-0 seleccion">
+                        <a href="{{route('info', $spot->id)}}" class="redirigir col-3 m-0 p-0 seleccion">
                         <img class="imagenSelec" src="{{asset($spot->url)}}">
                         <div class="contenido">
                             <h2>{{($spot->name)}}</h2>

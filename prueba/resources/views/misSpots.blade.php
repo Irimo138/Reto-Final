@@ -79,28 +79,32 @@
             </section>
             <section class="container">
                 <div class="row">
-                <section class="seleccion caja col-12 col-md-4 p-0 m-0 text-center ">
-                    </section>
-                Prueba
-                @foreach($spots as $spot)
-                        <div class="col-4">
-                            <div class="card">
-                                <img class="img-fluid" src="{{asset($spot->url)}}" alt="">
-                                <h2 class="card-title">{{($spot->name)}}</h2>
-                                <div class="card-footer"></div>
-                                    <a href="{{route('edit', $spot)}}" class="btn tbn-primary">Editar</a>
-
-                                    <form action="{{route('destroy', $spot)}}" method="POST" class="d-inline" >
-                                        @method('DELETE')
-                                        @csrf
-                                        <button id="boton-eliminar" class="btn btn-danger" type="submit">Eliminar</button>
-                                    </form>
+                    @foreach ($spots as $spot)
+                    <div class="col-3">
+                        <div class="card m-0 p-0">
+                            <a href="{{route('info', $spot)}}" class="redirigir col-3 m-0 p-0 seleccion">
+                                <img class="img-fluid imagenSelec" src="{{asset($spot->url)}}">
+                                <div class="contenido">
+                                    <h2>{{($spot->name)}}</h2>
                                 </div>
-                            
+                            </a>
+                            <div class="card-footer">
+                                <a href="{{route('edit', $spot)}}" class="btn tbn-primary">Editar</a>
+                                <form action="{{route('destroy', $spot)}}" method="POST" class="d-inline" >
+                                    @method('DELETE')
+                                    @csrf
+                                    <button id="boton-eliminar" class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
                             </div>
-                            
                         </div>
-                    @endforeach
+                    </div>
+                    @endforeach 
+                    <a href="{{route('nuevoSpot')}}" class="redirigir col-3 m-0 p-0 seleccion">
+                        <img class="imagenSelec" src="images/carretera2.jpg">
+                        <div class="contenido">
+                            <h2>Publicar un Spot</h2>
+                        </div>
+                    </a>         
                 </div>
             </section>
         </main>
