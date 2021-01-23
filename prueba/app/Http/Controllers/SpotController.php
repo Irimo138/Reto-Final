@@ -34,13 +34,13 @@ class SpotController extends Controller
             
         ]);
         $imagenes = $request->file('file')->store('public/imagenes');
-       $url = Storage::url($imagenes);
+        $url = Storage::url($imagenes);
 
-       $spots = new Spot();
-       $spots->name = $request->name;
-       $spots->descripcion = $request->descripcion;
-       $spots->latitud = $request->latitud;
-       $spots->longitud = $request->longitud;
+        $spots = new Spot();
+        $spots->name = $request->name;
+        $spots->descripcion = $request->descripcion;
+        $spots->latitud = $request->latitud;
+        $spots->longitud = $request->longitud;
 
        Spot::create([
            'name' => $spots->name,
@@ -52,8 +52,9 @@ class SpotController extends Controller
        ]);
 
        //Al crear un nuevo spot te redirigirá a la página de explorador de spots
-       return redirect()->route('explorador');
+       return redirect()->route('dashboard');
     }
+
     public function destroy($id){
         
         $spot = Spot::find($id);
@@ -65,14 +66,22 @@ class SpotController extends Controller
         return redirect()->route('mios');
         
     }
-    public function edit($id){
-        
-        $spot = Spot::find($id);
 
-        return view('editar')->with('spots', $spot);
-        
+    public function edit($id){
+
+        $spot = Spot::find($id);
+        return view('editar', compact('spot'));  
     }
+    public function update(Request $request, $id){
+
+        $spot = Spot::find($id);
+        $spot->update($request->all());
+
+        return redirect('/mySpots');  
+    }
+
     public function show(){
+
         $spots = \App\Models\Spot::all();
         return view("spots", array('spots'=>$spots)); 
     }

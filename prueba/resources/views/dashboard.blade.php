@@ -50,6 +50,10 @@
             </div>
             <br>
             <div class="row">
+                <a href="{{route('mios')}}" class="btn btn-secondary mx-auto">{{trans('messages.mio')}}</a><br>
+            </div>
+            <br>
+            <div class="row">
                 <div class="btn-group mx-auto">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Ordenar por:</button>
                     <div class="dropdown-menu">
