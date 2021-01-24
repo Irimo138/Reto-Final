@@ -44,6 +44,7 @@ return [
     //Explorador Spots
     'bienvenido' => 'Ongi Etorri',
     'nuevospot' => 'Spot berria sortu',
+    'mio' =>'Nire Spots',
     //Crear Spot
     'crearnombre' => 'Izena',
     'creardescripcion' =>'deskribapena',

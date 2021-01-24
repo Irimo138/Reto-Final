@@ -4,13 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Linkear los estilos de la página-->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/formulariocrearSpot.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/formulariocrearSpot.css">
         <!--Linkear los scripts de bootstrap-->
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/jquery-3.4.1.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
         <!--Enlaces de Leaflet-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
@@ -69,8 +69,8 @@
         <div id="cuerpo">
             <section class="p-5" id="page-content-wrapper">
             <span class="d-block d-sm-none d-md-none" id="boton" onclick="openNav()">&#9776;</span>
-                <h1>$spots->name}}</h1>
-                    <p style="text-align: justify">$spots->descripcion}}</p>
+                <h1>{{$spot->name}}</h1>
+                    <p style="text-align: justify">{{$spot->descripcion}}</p>
                     <div class="row">
                         <img style="height: 50vh;" class="col-lg-6 col-md-12 mx-auto" src="images/tren.jpg">
                         <div id="mapid" style="width: 100%; height: 50vh; position: relative; border: solid 1px lightgrey; border-radius: 3px" class="col-lg-6 col-md-12 mx-auto leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0">

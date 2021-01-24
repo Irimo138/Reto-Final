@@ -49,7 +49,7 @@ Auth::routes();
 
 Route::group([ 'middleware'=>'auth'], function(){
     //ruta que te redirige a la vista de tus spots
-    Route::get('/mios',[\App\Http\Controllers\SpotController::class, 'mios'])->name('mios');
+    Route::get('/mySpots',[\App\Http\Controllers\SpotController::class, 'mios'])->name('mios');
 
     //Rutas para crear y mostrar los spots en la vista spots
     Route::get('/spot', [\App\Http\Controllers\SpotController::class, 'show']);
@@ -57,7 +57,8 @@ Route::group([ 'middleware'=>'auth'], function(){
     
     //Rutas para la edicion y el borrado de tus spots
     Route::delete('/destroy/{id}', 'SpotController@destroy')->name("destroy");
-    Route::put('/edit/{spot}', 'SpotController@edit')->name('edit');
+    Route::get('/mySpots/{id}/edit', '\App\Http\Controllers\SpotController@edit')->name('edit');
+    Route::put('/update/{id}', '\App\Http\Controllers\SpotController@update')->name('upadte');
     
     Route::get('/dashboard', [\App\Http\Controllers\SpotController::class, 'index'])->name("dashboard");
 });

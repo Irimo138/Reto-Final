@@ -44,6 +44,7 @@ return [
     //Explorador Spots
     'bienvenido' => 'Bienvenido',
     'nuevospot' => 'Nuevo Spot',
+    'mio' =>'Mis Spots',
     //Crear Spot
     'crearnombre' => 'Nombre',
     'creardescripcion' =>'Descripción',

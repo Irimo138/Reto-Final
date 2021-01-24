@@ -72,20 +72,20 @@
         <div id="cuerpo">
             <section id="page-content-wrapper">
             <span class="d-block d-sm-block d-md-none" id="boton" onclick="openNav()">&#9776;</span>
-                <h2>Crear Spot:</h2>
+                <h2>Editar Spot:</h2>
                 <article class="card px-5 py-5 mx-auto my-auto col-xs-12 col-sm-10 col-md-10 col-lg-8">
                     
-                    <form method="PUT" action="{{route('/edit/{spot}')}}" enctype="multipart/form-data">
+                    <form method="POST" action="/update/{{$spot->id}}" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <p>Nombre:</p>
-                        <input type="string" class="form-control" name="name" value="$spot->name">
+                        <input type="string" class="form-control" name="name" value="{{$spot->name}}">
                         <br>
                         
                         <p>Descripción</p>
-                        <input type="text" class="form-control" name="descripcion">
+                        <input type="text" class="form-control" name="descripcion" value="{{$spot->descripcion}}">
                         <br>
                         <p>Imagen</p>
                         <input type="file" class="form-control btn" name="file" id="" accept="image/*">
@@ -95,8 +95,8 @@
                         @enderror
                         <p>Coordenadas:</p>
                         <div class="row">
-                            <input type="string" class="form-control mx-auto col-4" name="latitud" id="latitud">
-                            <input type="string" class="form-control mx-auto col-4" name="longitud" id="longitud">
+                            <input type="string" class="form-control mx-auto col-4" name="latitud" id="latitud" value="{{$spot->latitud}}">
+                            <input type="string" class="form-control mx-auto col-4" name="longitud" id="longitud" value="{{$spot->longitud}}">
                         </div>
                         <br>
                         <div id="mapid" style="width: 100%; height: 60vh; position: relative; border: solid 1px lightgrey; border-radius: 3px" class=" mt-2 mb-2 mx-auto leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0">
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <input class="btn btn-secondary mx-auto col-4" id="crear" type="submit" value="Crear Spot"/>
+                            <input class="btn btn-secondary mx-auto col-4" id="crear" type="submit" value="Actualizar cambios"/>
                         </div>
                     </form>
                 </article>
