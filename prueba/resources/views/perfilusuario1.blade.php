@@ -79,7 +79,7 @@
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <h5>{{Auth::user()->city}}</h5>
-                        <p>Fecha de nacimiento: {{Auth::user()->fecha}}</p>
+                        <p>{{trans('messages.fechanac')}}: {{Auth::user()->fecha}}</p>
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Aqui se mostrarán los Spots creados por el usuario</div>
                     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Configuración</div>

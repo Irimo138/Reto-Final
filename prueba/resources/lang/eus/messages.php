@@ -49,4 +49,6 @@ return [
     'creardescripcion' =>'deskribapena',
     'crearimagen'=>'Argazkia',
     'crearcoordenadas'=>'Koordenatuak',
+    //perfil usuario
+    'fechanac' => 'Jaiotze data'
 ];

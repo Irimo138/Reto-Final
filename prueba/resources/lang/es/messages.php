@@ -49,4 +49,6 @@ return [
     'creardescripcion' =>'Descripción',
     'crearimagen'=>'Imagen',
     'crearcoordenadas'=>'Coordenadas',
+    //perfil usuario
+    'fechanac' => 'Fecha de nacimiento'
 ];
