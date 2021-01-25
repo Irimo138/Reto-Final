@@ -52,5 +52,7 @@ return [
     'crearcoordenadas'=>'Koordenatuak',
     //perfil usuario
     'fechanac' => 'Jaiotze data',
-    'guardarcambios'=>'Aldaketak gorde'
+    'guardarcambios'=>'Aldaketak gorde',
+    'biografia'=>'Biografia',
+    'placebiografia'=>'Zeure burua aurkeztu'
 ];

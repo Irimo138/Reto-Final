@@ -58,7 +58,7 @@ Route::group([ 'middleware'=>'auth'], function(){
     //Rutas para la edicion y el borrado de tus spots
     Route::delete('/destroy/{id}', 'SpotController@destroy')->name("destroy");
     Route::get('/mySpots/{id}/edit', '\App\Http\Controllers\SpotController@edit')->name('edit');
-    Route::put('/update/{id}', '\App\Http\Controllers\SpotController@update')->name('upadte');
+    Route::put('/update/{id}', '\App\Http\Controllers\SpotController@update')->name('update');
     
     Route::get('/dashboard', [\App\Http\Controllers\SpotController::class, 'index'])->name("dashboard");
 });

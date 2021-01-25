@@ -52,5 +52,7 @@ return [
     'crearcoordenadas'=>'Coordenadas',
     //perfil usuario
     'fechanac' => 'Fecha de nacimiento',
-    'guardarcambios'=>'Guardar Cambios'
+    'guardarcambios'=>'Guardar Cambios',
+    'biografia'=>'Biografia',
+    'placebiografia'=>'Cuenta algo sobre tí'
 ];

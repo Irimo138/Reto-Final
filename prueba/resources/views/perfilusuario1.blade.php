@@ -78,7 +78,7 @@
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <h5>{{Auth::user()->city}}</h5>
-                        <p>{{Auth::user()->biografia}}</p>
+                        <p style="text-align: justify">{{Auth::user()->biografia}}</p>
                         <p>{{trans('messages.fechanac')}}: {{Auth::user()->fecha}}</p>
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Aqui se mostrarán los Spots creados por el usuario</div>
@@ -94,22 +94,19 @@
                             </div>
                             <!-- Biografia -->
                             <div class="mt-4">
-                                {{ trans('messages.ciudad') }}
-                                <textarea id="city" placeholder="{{ trans('messages.placeciudad') }}" class="block mt-1 w-full form-control" name="city" :value="old('city')" required>
-                            </textarea>
+                                {{ trans('messages.biografia') }}
+                                <textarea id="city" placeholder="{{ trans('messages.placebiografia') }}" class="block mt-1 w-full form-control" name="city" :value="old('city')" required></textarea>
                             </div>
-                            <!-- Ciudad -->
+                            <!--ss Ciudad -->
                             <div class="mt-4">
                                 {{ trans('messages.ciudad') }}
-                                <x-input id="city" placeholder="{{ trans('messages.placeciudad') }}" class="block mt-1 w-full form-control" type="text" name="city" :value="old('city')" required />
+                                <x-input id="city" placeholder="{{ trans('messages.placeciudad') }}" class="block mt-1 w-full form-control" type="text" name="biografia" :value="old('biografia')" required />
                             </div>
                             <!-- fecha -->
                             <div class="mt-4">
                                 {{ trans('messages.fecha') }}
                                 <x-input id="fecha" class="block mt-1 w-full form-control" type="date" name="fecha" :value="old('fecha')" required />
                             </div>
-
-
                             <div class="flex items-center justify-end mt-4">
                                 <x-button class="btn ml-4 btn-secondary">
                                     {{ trans('messages.guardarcambios') }}
