@@ -43,5 +43,14 @@ return [
     'iniciarcontra' => 'Pasahitza',
     //Explorador Spots
     'bienvenido' => 'Ongi Etorri',
-    'nuevospot' => 'Spot berria sortu'
+    'nuevospot' => 'Spot berria sortu',
+    'mio' =>'Nire Spots',
+    //Crear Spot
+    'crearnombre' => 'Izena',
+    'creardescripcion' =>'deskribapena',
+    'crearimagen'=>'Argazkia',
+    'crearcoordenadas'=>'Koordenatuak',
+    //perfil usuario
+    'fechanac' => 'Jaiotze data',
+    'guardarcambios'=>'Aldaketak gorde'
 ];

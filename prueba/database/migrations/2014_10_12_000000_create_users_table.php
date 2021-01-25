@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('city');
             $table->date('fecha');
             $table->string('rol');
+            $table->string('biografia')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -37,11 +37,12 @@ Route::get('/', function () {
 Route::get('/temporal', function () {
     return view('infoSpot');
 });
-
+Route::get('/usuario', function(){
+    return view('perfilusuario1');
+});
 
 Route::get('/explorar', [\App\Http\Controllers\HomeController::class, 'index'])->name("explorador");
 Route::get('/explorar/{id}/info', [\App\Http\Controllers\HomeController::class, 'info'])->name("info");
-
 
 // LAS SIGUIENTES RUTAS REQUIEREN DE AUTENTIFICACIÓN
 Auth::routes();

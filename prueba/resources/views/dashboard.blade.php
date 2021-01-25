@@ -3,8 +3,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PicSite</title>
         <!--Linkear los estilos de la página-->
-        <link rel="stylesheet" href="css/estilosIndex.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/estilosIndex.css">
         <!--Linkear los scripts de bootstrap-->
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/popper.min.js"></script>
@@ -43,7 +43,7 @@
             </div>
             <hr class="linea mx-auto">
             <div class="row">
-                <h5 class="mx-auto">{{trans('messages.bienvenido')}},  {{Auth::user()->nickname}}</h5>
+                <h5 class="mx-auto">{{trans('messages.bienvenido')}},  <span><a href="https://localhost/Reto-Final/prueba/public/usuario">{{Auth::user()->nickname}}</a></span></h5>
             </div>
             <div class="row">
                 <a href="https://localhost/Reto-Final/prueba/public/spot" class="btn btn-secondary mx-auto">{{trans('messages.nuevospot')}}</a><br>
@@ -98,7 +98,6 @@
                     </a>         
                 </div>
             </section>
-           
         </main>
     </body>
 </html>
