@@ -69,8 +69,8 @@
         <div id="cuerpo">
             <section class="p-5" id="page-content-wrapper">
             <span class="d-block d-sm-none d-md-none" id="boton" onclick="openNav()">&#9776;</span>
-                <h1>$spots->name}}</h1>
-                    <p style="text-align: justify">$spots->descripcion}}</p>
+                <h1>{{$spot->name}}</h1>
+                    <p style="text-align: justify">{{$spot->descripcion}}</p>
                     <div class="row">
                         <img style="height: 50vh;" class="col-lg-6 col-md-12 mx-auto" src="images/tren.jpg">
                         <div id="mapid" style="width: 100%; height: 50vh; position: relative; border: solid 1px lightgrey; border-radius: 3px" class="col-lg-6 col-md-12 mx-auto leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0">

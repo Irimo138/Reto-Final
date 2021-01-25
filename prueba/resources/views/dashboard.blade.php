@@ -50,6 +50,10 @@
             </div>
             <br>
             <div class="row">
+                <a href="{{route('mios')}}" class="btn btn-secondary mx-auto">{{trans('messages.mio')}}</a><br>
+            </div>
+            <br>
+            <div class="row">
                 <div class="btn-group mx-auto">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Ordenar por:</button>
                     <div class="dropdown-menu">
@@ -83,7 +87,7 @@
             <section class="container">
                 <div class="row">
                     @foreach($spots as $spot)
-                    <a href="{{route('info', $spot)}}" class="redirigir col-3 m-0 p-0 seleccion">
+                        <a href="{{route('info', $spot->id)}}" class="redirigir col-3 m-0 p-0 seleccion">
                         <img class="imagenSelec" src="{{asset($spot->url)}}">
                         <div class="contenido">
                             <h2>{{($spot->name)}}</h2>
